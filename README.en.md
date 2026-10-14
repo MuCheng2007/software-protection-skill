@@ -6,9 +6,9 @@
 
 # 🛡️ Software Protection & Licensing Skill
 
-**Learn from public cracking reports. Design more reliable licensing.**
+**Ready to sell your app, but licensing still depends on one `if`? Ask your AI to find the weak points.**
 
-Help your AI assistant identify what to protect, choose a licensing architecture, implement it, and verify its behavior.
+Learn from public cracking reports to review software protection, design license key validation, offline activation and device binding, and plan online or hybrid licensing with implementation and acceptance criteria.
 
 [![MIT](https://img.shields.io/badge/License-MIT-65dfc8?style=for-the-badge)](LICENSE)
 [![Agent Skills](https://img.shields.io/badge/Agent_Skills-Compatible-7e9cff?style=for-the-badge)](https://agentskills.io/specification)
@@ -21,6 +21,22 @@ Help your AI assistant identify what to protect, choose a licensing architecture
 ---
 
 ## ✨ What this project does
+
+Your desktop app, plugin, or developer tool is ready to sell. Where should license checks live? How should offline licenses be signed? What happens if an online response is forged, or a local licensing branch is removed?
+
+**This skill helps your assistant answer those questions against your project: locate the weak points, explain failure conditions, choose a practical design, and specify how to test it.**
+
+| Your concern | What the skill helps review and design |
+| --- | --- |
+| Activation or license key checks can be skipped | Trace how licensing decisions control business capabilities and identify removable or replaceable checks |
+| Offline licenses can be copied; device binding complicates legitimate replacement | Design signed licenses, machine binding, expiration, and device replacement, including offline limitations |
+| A forged network response unlocks the app | Review response trust and server-side permissions, distinguishing local messages from controlled capabilities |
+| Obfuscation or packing is enabled, but protection is unverified | Assess shipped artifacts, loading and update paths, and define anti-tampering acceptance tests |
+| AI built the features but left the commercial licensing lifecycle incomplete | Plan issuance, activation, renewal, revocation, seats, outage recovery, and operations |
+
+For independent developers and small teams adding licensing to their own software. It can also help organize remediation after authorized analysis with AI reverse-engineering tools such as REA (Reverse Engineer Anything). This is an independently maintained project, not affiliated with REA, and no protection testing against REA is claimed.
+
+**Expected deliverables: protection priorities, an architecture recommendation, an integration plan, acceptance criteria, and remaining risks.** With source and runtime access, the assistant can help implement the plan. With design materials alone, it starts with a proposal.
 
 An activation dialog, RSA signature, or executable packer alone does not explain what your software actually protects.
 
