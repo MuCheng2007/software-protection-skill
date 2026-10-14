@@ -136,6 +136,18 @@ python scripts/validate.py
 
 Checks cover structure, internal references, case fields, and pattern mappings. They do not prove that a target application is secure.
 
+## ⭐ Star History
+
+Stars over time, provided by [Star History](https://www.star-history.com/?repos=MuCheng2007%2Fsoftware-protection-skill&type=date). This measures stars, not page views or installations. As the project is new, the curve may be empty until there is growth data. Image availability and refresh timing depend on the third-party service and caching.
+
+<a href="https://www.star-history.com/?repos=MuCheng2007%2Fsoftware-protection-skill&type=date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=MuCheng2007/software-protection-skill&amp;type=Date&amp;theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=MuCheng2007/software-protection-skill&amp;type=Date" />
+    <img alt="Star History for Software Protection &amp; Licensing Skill" src="https://api.star-history.com/svg?repos=MuCheng2007/software-protection-skill&amp;type=Date" width="800" />
+  </picture>
+</a>
+
 ## 📄 License and sources
 
 Original skill content, scripts, and graphics use the [MIT License](LICENSE). You may use, modify, and share them. Rights in third-party posts, trademarks, and linked pages remain with their respective owners. This repository stores brief original summaries and citations. See [NOTICE](NOTICE).

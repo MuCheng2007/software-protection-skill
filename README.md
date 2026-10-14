@@ -129,6 +129,18 @@ python scripts/validate.py
 
 检查覆盖结构、内部引用、案例字段与模式映射，不证明目标软件安全。
 
+## ⭐ Star History
+
+收藏数随时间的变化，由 [Star History](https://www.star-history.com/?repos=MuCheng2007%2Fsoftware-protection-skill&type=date) 提供。它不是浏览量或安装量；项目刚起步，暂无增长数据时曲线可能为空。图表加载和刷新受第三方服务及缓存影响。
+
+<a href="https://www.star-history.com/?repos=MuCheng2007%2Fsoftware-protection-skill&type=date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=MuCheng2007/software-protection-skill&amp;type=Date&amp;theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=MuCheng2007/software-protection-skill&amp;type=Date" />
+    <img alt="Star History：软件保护与授权设计 Skill 收藏趋势" src="https://api.star-history.com/svg?repos=MuCheng2007/software-protection-skill&amp;type=Date" width="800" />
+  </picture>
+</a>
+
 ## 📄 开源与来源
 
 原创技能、脚本与图形采用 [MIT License](LICENSE)，欢迎使用、修改和分享。第三方帖子、商标及链接页面的权利仍归原权利人；本仓库仅保存简短原创摘要与引用，来源说明见 [NOTICE](NOTICE)。
