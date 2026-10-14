@@ -1,5 +1,7 @@
 <div align="center">
 
+**简体中文** · [English](README.en.md)
+
 ![Software Protection Skill — Learn from failures](assets/hero.svg)
 
 # 🛡️ 软件保护与授权设计 Skill
@@ -126,10 +128,6 @@ python scripts/validate.py
 ```
 
 检查覆盖结构、内部引用、案例字段与模式映射，不证明目标软件安全。
-
-## 🌐 English overview
-
-An evolving, vendor-neutral Agent Skill for software licensing and protection. It turns public failure reports into evidence-aware reviews, offline/online/hybrid licensing designs, implementation guidance and acceptance criteria. Works with compatible skill-aware assistants; no universal client compatibility or anti-cracking guarantee is claimed.
 
 ## 📄 开源与来源
 
