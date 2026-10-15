@@ -23,7 +23,13 @@
         "F06"
       ],
       "limitations": "作者自制授权锁样例，不计为商业软件实战；仅公开正文核对，未独立复现，不推广到全部RSA或当前版本。",
-      "independently_reproduced": false
+      "independently_reproduced": false,
+      "review_status": "source_body_reviewed",
+      "source_review_note": "原文明确使用自制VMP Demo，需已知ProductCode；e=1的等式还需输入小于模数，不能称为RSA算法被攻破。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "illustrative",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C01"
     },
     {
       "id": "C02",
@@ -45,7 +51,13 @@
         "date": "2026-10-15",
         "input_id": "C22",
         "note": "同一来源的本地抓取与补充摘要已归并，未重复计数；未独立复现。"
-      }
+      },
+      "review_status": "source_body_reviewed",
+      "source_review_note": "正文有密码调用替换和指纹比较说明；只能支持该版本本地执行链修改，不能外推所有版本或服务端授权。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "author_claim_lead",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C02"
     },
     {
       "id": "C03",
@@ -67,7 +79,13 @@
         "date": "2026-10-15",
         "input_id": "C32",
         "note": "同一来源的本地抓取与补充摘要已归并，未重复计数；未独立复现。"
-      }
+      },
+      "review_status": "source_body_reviewed",
+      "source_review_note": "正文区分归档哈希、解包目录和seed/OTA恢复；属于开源组件行为修改，不是付费授权破解。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "author_claim_lead",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C03"
     },
     {
       "id": "C04",
@@ -84,7 +102,13 @@
         "F07"
       ],
       "limitations": "只抽象授权失效机制，不提供作弊功能。作者对跨软件位冲突的推测未测试，不能认定服务器越权。",
-      "independently_reproduced": false
+      "independently_reproduced": false,
+      "review_status": "source_body_reviewed",
+      "source_review_note": "正文报告替换软件位配置并讨论后台字段；软件标识符不是权限，跨软件位冲突属于未测试推测；不采用原文对RSA/ECDH的泛化解释。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "author_claim_lead",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C04"
     },
     {
       "id": "C05",
@@ -100,7 +124,13 @@
         "F02"
       ],
       "limitations": "没有可核对目标及实际成功记录，不能计为真实破解案例。",
-      "independently_reproduced": false
+      "independently_reproduced": false,
+      "review_status": "source_body_reviewed",
+      "source_review_note": "原文有场景设定和情况A/B的假设结果，没有实际目标；保持假设教程分类。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "illustrative",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C05"
     },
     {
       "id": "C06",
@@ -116,8 +146,14 @@
         "F03",
         "F04"
       ],
-      "limitations": "绝对日期来自搜索摘要和正文路径，部分抓取显示相对日期，日期精度需保留此冲突；不是商业案例。",
-      "independently_reproduced": false
+      "limitations": "浏览器原帖确认绝对日期；网页工具缓存仅显示相对日期。属于教学样例，未经本项目独立运行复现。",
+      "independently_reproduced": false,
+      "review_status": "source_body_reviewed",
+      "source_review_note": "浏览器正文确认绝对日期2026-09-15，并给出查表及日志代码；网页工具缓存只显示相对日期，不能据此重算日期。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "illustrative",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C06"
     },
     {
       "id": "C07",
@@ -126,14 +162,20 @@
       "url": "https://bbs.kanxue.com/thread-291357.htm",
       "published_at": "2026-05-27",
       "retrieved_at": "2026-10-14",
-      "case_type": "historical_author_report",
+      "case_type": "architecture_review",
       "access": "public_body",
-      "evidence_summary": "正文描述定位公钥与本地授权判断后修改执行结果。",
+      "evidence_summary": "对话式文章分析本地激活状态、公钥和许可文件，并提出多条修改方案；未展示完整执行结果，只作为本地信任链审查线索。",
       "patterns": [
         "F01"
       ],
       "limitations": "时间窗外补充；对话式作者叙述不等于独立复现或厂商确认。",
-      "independently_reproduced": false
+      "independently_reproduced": false,
+      "review_status": "source_body_reviewed",
+      "source_review_note": "对话式文章列出分析和三种建议方案，没有闭合的运行验证轨迹；降为架构分析，不把建议补丁写成已成功执行。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "architecture_check",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C07"
     },
     {
       "id": "C08",
@@ -150,7 +192,13 @@
         "F04"
       ],
       "limitations": "正文提示登录可看完整内容；未下载附件。列表近期回复不代表近期发表。",
-      "independently_reproduced": false
+      "independently_reproduced": false,
+      "review_status": "partial_body_reviewed",
+      "source_review_note": "可读正文含本地序列号处理与变种CRC约束，后续内容有登录提示；保留局部机制线索，不等于完整注册机或样本复现。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "author_claim_lead",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C08"
     },
     {
       "id": "C09",
@@ -159,7 +207,7 @@
       "url": "https://bbs.kanxue.com/thread-285076.htm",
       "published_at": "2025-01-01",
       "retrieved_at": "2026-10-14",
-      "case_type": "historical_author_report",
+      "case_type": "historical_author_demo",
       "access": "public_body",
       "evidence_summary": "作者在样例中讨论替换本地信任参数或解密结果的共同瓶颈。",
       "patterns": [
@@ -167,7 +215,13 @@
         "F06"
       ],
       "limitations": "历史资料；正文明确不分析平台网络验证。不能当作该平台完整服务被攻破。",
-      "independently_reproduced": false
+      "independently_reproduced": false,
+      "review_status": "source_body_reviewed",
+      "source_review_note": "原文明示自编测试样本及正常序列号前提，并排除网络验证分析；修正为历史教学演示。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "illustrative",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C09"
     },
     {
       "id": "C10",
@@ -181,7 +235,13 @@
       "evidence_summary": "可读部分列出托管程序集分析背景，关键内容要求回复后查看。",
       "patterns": [],
       "limitations": "未取得完整机制，不用于新增具体规则；没有登录或回复解锁。",
-      "independently_reproduced": false
+      "independently_reproduced": false,
+      "review_status": "partial_body_reviewed",
+      "source_review_note": "确认2022-01-01及隐藏内容提示；可读内容不足以复核具体机制，保留无模式映射。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "none",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C10"
     },
     {
       "id": "C11",
@@ -195,7 +255,13 @@
       "evidence_summary": "可读部分讨论压缩壳分析，授权与心跳后续内容隐藏。",
       "patterns": [],
       "limitations": "标题不证明具体机制和成功；不计为近期心跳破解证据。",
-      "independently_reproduced": false
+      "independently_reproduced": false,
+      "review_status": "partial_body_reviewed",
+      "source_review_note": "确认2023-03-01及隐藏内容提示；标题中的心跳不能作为成功绕过证据。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "none",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C11"
     },
     {
       "id": "C12",
@@ -209,7 +275,13 @@
       "evidence_summary": "泛化防护观点文章。",
       "patterns": [],
       "limitations": "无本轮可核对实测链，不纳入失效机制证据。",
-      "independently_reproduced": false
+      "independently_reproduced": false,
+      "review_status": "source_body_reviewed",
+      "source_review_note": "正文是保护产品的推广性架构主张，没有可核对攻击验证链；继续排除。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "none",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C12"
     },
     {
       "id": "C13",
@@ -223,35 +295,53 @@
       "evidence_summary": "私有化部署观点与推广性主张。",
       "patterns": [],
       "limitations": "不作为免费、绝对强防护或具体破解效果的依据。",
-      "independently_reproduced": false
+      "independently_reproduced": false,
+      "review_status": "source_body_reviewed",
+      "source_review_note": "正文提供部署与营销性主张，未给出对抗测试；继续排除，不能据此宣称私有部署天然更安全。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "none",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C13"
     },
     {
       "id": "C14",
       "site": "看雪",
       "title": "Jetbrains激活Discover Server实现的分析",
       "url": "https://bbs.kanxue.com/thread-283941.htm",
-      "published_at": null,
+      "published_at": "2024-10-14",
       "retrieved_at": "2026-10-14",
-      "case_type": "unclassified_excluded",
-      "access": "page_opened_not_analyzed",
-      "evidence_summary": "论坛列表发现，打开但未完成正文机制及日期分析。",
+      "case_type": "excluded_insufficient_detail",
+      "access": "public_partial",
+      "evidence_summary": "本次核到原帖日期与设置链接，关键正文要求回复或点赞，具体实现证据不足。",
       "patterns": [],
       "limitations": "不得从标题补写方法或作为近期案例。",
-      "independently_reproduced": false
+      "independently_reproduced": false,
+      "review_status": "partial_body_reviewed",
+      "source_review_note": "本次核到2024-10-14，公开部分只有设置链接且关键正文隐藏；修正日期，仍排除机制证据。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "none",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C14"
     },
     {
       "id": "C15",
       "site": "看雪",
       "title": "【安装 破解】IDA Pro 9.4sp1 9月15更新版",
       "url": "https://bbs.kanxue.com/thread-293045-19.htm",
-      "published_at": null,
+      "published_at": "2026-09-25",
       "retrieved_at": "2026-10-14",
       "case_type": "excluded_distribution",
-      "access": "reply_page_excerpt",
+      "access": "reply_page_header",
       "evidence_summary": "检索返回下载分发帖的回复分页。",
       "patterns": [],
       "limitations": "不分析、不下载；没有机制证据，分页显示日期不作为原帖日期。",
-      "independently_reproduced": false
+      "independently_reproduced": false,
+      "review_status": "header_only_reviewed",
+      "source_review_note": "浏览器仅查看回复分页标题与发表时间2026-09-25，未打开下载或附件；标题更新日不是发表日，继续排除分发记录。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "none",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C15"
     },
     {
       "id": "C16",
@@ -269,7 +359,13 @@
         "F10"
       ],
       "limitations": "时间窗外补充；自动化脚本隐藏且功能未长期测试，作者自己也保留其他检查存在的可能；未独立复现。",
-      "independently_reproduced": false
+      "independently_reproduced": false,
+      "review_status": "source_body_reviewed",
+      "source_review_note": "原文给出128-bit模数及本地/在线/恢复路径；复算模数位数，但不采用作者泛化的分解耗时或统一3072位要求。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "author_claim_lead",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C16"
     },
     {
       "id": "C17",
@@ -292,7 +388,13 @@
         "retrieved_at": "2026-10-14",
         "access": "search_excerpt_body_fetch_failed",
         "case_type": "ctf_excerpt_only"
-      }
+      },
+      "review_status": "source_body_reviewed",
+      "source_review_note": "原文明示手写CTF_Demo与三种本地校验，日期为2026-08-04；只作教学，修复建议仍需独立判断。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "illustrative",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C17"
     },
     {
       "id": "C18",
@@ -314,7 +416,13 @@
         "retrieved_at": "2026-10-14",
         "access": "search_excerpt_body_fetch_failed",
         "case_type": "unverified_claim"
-      }
+      },
+      "review_status": "partial_body_reviewed",
+      "source_review_note": "楼主自述移除VBA模块及修复调用，未给完整轨迹；CPU/MAC/校名是作者描述，不能认定服务器被攻破。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "author_claim_lead",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C18"
     },
     {
       "id": "C19",
@@ -330,13 +438,19 @@
         "F01",
         "F09"
       ],
-      "limitations": "本轮浏览器读取完整公开说明，首次发表13:36；升级为有方法说明的作者主张，未验证工具实现或实际运行。不能推断只改配置即可绕过。",
+      "limitations": "作者说明只适配所给特定版本；正常页本轮只显示回复，公开打印页取得原楼主说明。无完整反汇编或实现验证，未经本项目独立复现。",
       "independently_reproduced": false,
       "prior_observation": {
         "retrieved_at": "2026-10-14",
         "access": "search_excerpt",
         "case_type": "excluded_distribution"
-      }
+      },
+      "review_status": "partial_body_reviewed",
+      "source_review_note": "普通页本次仅返回回复；公开打印页确认原楼主2026-09-03的公钥替换和配置说明，且作者答复只适配所给版本；不视为完整实现验证。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "author_claim_lead",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C19"
     },
     {
       "id": "C20",
@@ -350,7 +464,13 @@
       "evidence_summary": "正文只说明提供算号，未披露注册算法或分析过程。",
       "patterns": [],
       "limitations": "有日期和正文不代表有方法证据；没有保存回复中的机器码、用户信息或激活码。",
-      "independently_reproduced": false
+      "independently_reproduced": false,
+      "review_status": "source_body_reviewed",
+      "source_review_note": "原帖只提供算号服务，未披露算法；保留排除，不保存回复激活信息。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "none",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C20"
     },
     {
       "id": "C21",
@@ -367,9 +487,15 @@
         "F04",
         "F06"
       ],
-      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。已对照本地抓取正文抽查；未重新在线核对页面。原文概述称RSA-1024响应签名，正文长度分析称256字节；参数未独立核对，不据此确定签名规格。",
+      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。原文概述称RSA-1024响应签名，正文长度分析称256字节；参数未独立核对，不据此确定签名规格。",
       "independently_reproduced": false,
-      "review_status": "sampled_local_body"
+      "review_status": "source_body_reviewed",
+      "import_review_status": "sampled_local_body",
+      "source_review_note": "正文的验签后模块结果消费支持映射；RSA-1024概述与256字节签名分析相冲突，保持参数未核定。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "author_claim_lead",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C21"
     },
     {
       "id": "C23",
@@ -385,9 +511,15 @@
         "F03",
         "F06"
       ],
-      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。本轮仅审阅导入摘要与分类，并检查本地来源存在及状态，未逐项对照正文。",
+      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。",
       "independently_reproduced": false,
-      "review_status": "summary_review_only"
+      "review_status": "source_body_reviewed",
+      "import_review_status": "summary_review_only",
+      "source_review_note": "正文结果码路由和注册码约束支持本地规则重建线索；没有独立验证发出的授权或所有功能。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "author_claim_lead",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C23"
     },
     {
       "id": "C24",
@@ -403,9 +535,15 @@
         "F10",
         "F01"
       ],
-      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。已对照本地抓取正文抽查；未重新在线核对页面。模数与因子位数仅做整数复算，不属于目标软件运行验证。",
+      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。模数与因子位数仅做整数复算，不属于目标软件运行验证。",
       "independently_reproduced": false,
-      "review_status": "sampled_local_body"
+      "review_status": "source_body_reviewed",
+      "import_review_status": "sampled_local_body",
+      "source_review_note": "对原文模数及因子复算为108/32/76 bit且乘积相等；1344位是容器描述。分支替换和弱参数是不同问题。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "author_claim_lead",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C24"
     },
     {
       "id": "C25",
@@ -421,9 +559,15 @@
         "F03",
         "F06"
       ],
-      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。本轮仅审阅导入摘要与分类，并检查本地来源存在及状态，未逐项对照正文。哈希规则可重算不等于哈希可逆，换盐也不能修复客户端具备发卡能力的问题。",
+      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。哈希规则可重算不等于哈希可逆，换盐也不能修复客户端具备发卡能力的问题。",
       "independently_reproduced": false,
-      "review_status": "summary_review_only"
+      "review_status": "source_body_reviewed",
+      "import_review_status": "summary_review_only",
+      "source_review_note": "正文公式和演示代码支持客户端重算注册码；哈希不是可逆加密，盐可见只是客户端具备全部计算条件的一部分。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "author_claim_lead",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C25"
     },
     {
       "id": "C26",
@@ -434,15 +578,21 @@
       "retrieved_at": "2026-10-15",
       "case_type": "architecture_review",
       "access": "public_body",
-      "evidence_summary": "文章描述 Android Java/native 授权与短期租约架构，实际判定下沉到 native 层。Java 侧不验签本身不能证明系统缺少验签；必须继续核对 native 验证、最终能力消费和失败回退。本文未展示成功绕过。",
+      "evidence_summary": "文章分析Java/native租约架构，后半补充native静态观察；密码原语与部分动态行为仍待确认。未展示授权绕过，不能因Java侧不验签就认定native验证缺失。",
       "patterns": [
         "F01",
         "F06",
         "F08"
       ],
-      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。本轮仅审阅导入摘要与分类，并检查本地来源存在及状态，未逐项对照正文。未展示成功绕过，native内部是否正确执行验签仍需目标证据。",
+      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。未展示成功绕过，native内部是否正确执行验签仍需目标证据。",
       "independently_reproduced": false,
-      "review_status": "summary_review_only"
+      "review_status": "source_body_reviewed",
+      "import_review_status": "summary_review_only",
+      "source_review_note": "正文后半有native静态分析补充，但密码原语仍列待动态确认；不能因Java不验签或返回布尔值就认定native验签失效。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "architecture_check",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C26"
     },
     {
       "id": "C27",
@@ -457,9 +607,15 @@
       "patterns": [
         "F08"
       ],
-      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。已对照本地抓取正文抽查；未重新在线核对页面。短帖缺少软件版本、协议与完整测试条件，不证明心跳绕过流行程度。",
+      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。短帖缺少软件版本、协议与完整测试条件，不证明心跳绕过流行程度。",
       "independently_reproduced": false,
-      "review_status": "sampled_local_body"
+      "review_status": "source_body_reviewed",
+      "import_review_status": "sampled_local_body",
+      "source_review_note": "短帖有阻断/恢复通信后的不同表现，缺版本与完整协议；只能支持来源主张，不能统计心跳破解普遍性。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "author_claim_lead",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C27"
     },
     {
       "id": "C28",
@@ -477,9 +633,15 @@
         "F08",
         "F09"
       ],
-      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。本轮仅审阅导入摘要与分类，并检查本地来源存在及状态，未逐项对照正文。",
+      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。",
       "independently_reproduced": false,
-      "review_status": "summary_review_only"
+      "review_status": "source_body_reviewed",
+      "import_review_status": "summary_review_only",
+      "source_review_note": "俄文正文包含文件许可、HASP和本地时间检查；核对时间与入口线索，硬件协议和后端结果未完整验证。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "author_claim_lead",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C28"
     },
     {
       "id": "C29",
@@ -495,9 +657,15 @@
         "F01",
         "F06"
       ],
-      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。本轮仅审阅导入摘要与分类，并检查本地来源存在及状态，未逐项对照正文。",
+      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。",
       "independently_reproduced": false,
-      "review_status": "summary_review_only"
+      "review_status": "source_body_reviewed",
+      "import_review_status": "summary_review_only",
+      "source_review_note": "作者原站Posted on及time元素确认2026-02-01；正文说常量返回及复制例程，且作者保留另有保护的可能。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "author_claim_lead",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C29"
     },
     {
       "id": "C30",
@@ -514,9 +682,15 @@
         "F08",
         "F12"
       ],
-      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。本轮仅审阅导入摘要与分类，并检查本地来源存在及状态，未逐项对照正文。",
+      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。",
       "independently_reproduced": false,
-      "review_status": "summary_review_only"
+      "review_status": "source_body_reviewed",
+      "import_review_status": "summary_review_only",
+      "source_review_note": "Habr time元素确认2026-03-11；保护库作者的设计回顾并非独立攻防评测，地址计算和主动异常不能直接作为推荐防御。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "illustrative",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C30"
     },
     {
       "id": "C31",
@@ -533,9 +707,15 @@
         "F06",
         "F09"
       ],
-      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。本轮仅审阅导入摘要与分类，并检查本地来源存在及状态，未逐项对照正文。",
+      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。",
       "independently_reproduced": false,
-      "review_status": "summary_review_only"
+      "review_status": "source_body_reviewed",
+      "import_review_status": "summary_review_only",
+      "source_review_note": "正文展示本地privilege等消费点，未证明服务端会员权限被改变；内嵌密钥的角色也未单独验证。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "author_claim_lead",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C31"
     },
     {
       "id": "C33",
@@ -550,9 +730,15 @@
       "patterns": [
         "F05"
       ],
-      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。本轮仅审阅导入摘要与分类，并检查本地来源存在及状态，未逐项对照正文。",
+      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。",
       "independently_reproduced": false,
-      "review_status": "summary_review_only"
+      "review_status": "source_body_reviewed",
+      "import_review_status": "summary_review_only",
+      "source_review_note": "公开文明确为脱敏防守评测与有限动态观察，并列后续gate；不是攻击成功或保护强度保证。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "architecture_check",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C33"
     },
     {
       "id": "C34",
@@ -567,9 +753,15 @@
       "patterns": [
         "F04"
       ],
-      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。本轮仅审阅导入摘要与分类，并检查本地来源存在及状态，未逐项对照正文。",
+      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。",
       "independently_reproduced": false,
-      "review_status": "summary_review_only"
+      "review_status": "source_body_reviewed",
+      "import_review_status": "summary_review_only",
+      "source_review_note": "正文日期2024-03-14及WASM实例化、密码库调用支持前端逻辑可观察线索；不是商业许可证案例。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "author_claim_lead",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C34"
     },
     {
       "id": "C35",
@@ -582,9 +774,15 @@
       "access": "public_body",
       "evidence_summary": "该工具 README 介绍其自有设备文件格式与示例 HMAC 主密钥。工具文件格式的默认密钥不能归因到被分析的第三方 DRM 实现，本记录排除出具体目标失效机制证据。",
       "patterns": [],
-      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。已对照本地抓取正文抽查；未重新在线核对页面。示例密钥归属工具格式，不归属目标DRM；发布日期未核实，不纳入有日期窗口统计。",
+      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。示例密钥归属工具格式，不归属目标DRM；发布日期未核实，不纳入有日期窗口统计。",
       "independently_reproduced": false,
-      "review_status": "sampled_local_body"
+      "review_status": "source_body_reviewed",
+      "import_review_status": "sampled_local_body",
+      "source_review_note": "README主密钥属于工具的自有设备文件格式，不能归因目标DRM；继续排除具体目标失效映射。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "none",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C35"
     },
     {
       "id": "C36",
@@ -597,9 +795,15 @@
       "access": "public_body",
       "evidence_summary": "二手报道讨论 AI 逆向热度与单字节修改故事，但缺少可定位样本、原始修改证据和完整出处链。仅保留为检索背景，不用于证明成功率、成本或保护强度。",
       "patterns": [],
-      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。本轮仅审阅导入摘要与分类，并检查本地来源存在及状态，未逐项对照正文。二手报道，缺乏原始证据链，排除其成功率和成本主张。",
+      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。二手报道，缺乏原始证据链，排除其成功率和成本主张。",
       "independently_reproduced": false,
-      "review_status": "summary_review_only"
+      "review_status": "source_body_reviewed",
+      "import_review_status": "summary_review_only",
+      "source_review_note": "文章明确公开信息整理，缺原始目标与修改证据；继续排除成功率、成本和绝对强弱结论。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "none",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C36"
     },
     {
       "id": "C37",
@@ -617,27 +821,41 @@
         "F09",
         "F12"
       ],
-      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。本轮仅审阅导入摘要与分类，并检查本地来源存在及状态，未逐项对照正文。",
+      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。",
       "independently_reproduced": false,
-      "review_status": "summary_review_only"
+      "review_status": "source_body_reviewed",
+      "import_review_status": "summary_review_only",
+      "source_review_note": "正文确有SDK标记、IAT和本地许可分析；但静态IAT为空或能反编译不能单独证明未加保护，该结论只记为作者主张。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "author_claim_lead",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C37"
     },
     {
       "id": "C38",
       "site": "博客园",
       "title": "[.NET逆向] Listary",
       "url": "https://www.cnblogs.com/itcq1024/p/19097942",
-      "published_at": "2025-09-18",
+      "published_at": null,
       "retrieved_at": "2026-10-15",
-      "case_type": "author_instructions_limited_detail",
+      "case_type": "reposted_instructions_limited_detail",
       "access": "public_body",
       "evidence_summary": "作者给出特定 .NET 软件的许可方法体修改说明，提示验证结果和业务状态的消费位置可能被替换。细节有限，不认定所有功能或后端权益均已解锁。",
       "patterns": [
         "F01",
         "F06"
       ],
-      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。本轮仅审阅导入摘要与分类，并检查本地来源存在及状态，未逐项对照正文。",
+      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。本轮逐条审阅发现：博客第58行注明52pojie原帖；2025-09-18只是转载页时间，原帖在线读取受限，原始发表日期改为未核实。",
       "independently_reproduced": false,
-      "review_status": "summary_review_only"
+      "review_status": "partial_body_reviewed",
+      "import_review_status": "summary_review_only",
+      "source_review_note": "博客第58行注明52pojie原帖；2025-09-18只是转载页时间，原帖在线读取受限，原始发表日期改为未核实。",
+      "reviewed_at": "2026-10-15",
+      "reposted_at": "2025-09-18",
+      "original_url": "https://www.52pojie.cn/thread-2025340-1-1.html",
+      "mapping_role": "author_claim_lead",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C38"
     },
     {
       "id": "C39",
@@ -653,16 +871,22 @@
         "F01",
         "F06"
       ],
-      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。本轮仅审阅导入摘要与分类，并检查本地来源存在及状态，未逐项对照正文。",
+      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。",
       "independently_reproduced": false,
-      "review_status": "summary_review_only"
+      "review_status": "source_body_reviewed",
+      "import_review_status": "summary_review_only",
+      "source_review_note": "短正文给出去混淆和许可返回值修改说明；原文自己未研究去混淆必要性的原因，不能推广为所有版本必需。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "author_claim_lead",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C39"
     },
     {
       "id": "C40",
       "site": "CSDN",
       "title": "逆向爆破某报表软件随记",
       "url": "https://blog.csdn.net/applebomb/article/details/154849846",
-      "published_at": "2026-10-12",
+      "published_at": null,
       "retrieved_at": "2026-10-15",
       "case_type": "author_report",
       "access": "public_body",
@@ -672,9 +896,16 @@
         "F04",
         "F06"
       ],
-      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。本轮仅审阅导入摘要与分类，并检查本地来源存在及状态，未逐项对照正文。",
+      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。本轮逐条审阅发现：本地正文只显示最新推荐文章时间；首发日期改为未核实。描述支持自管Tomcat/Java Agent修改本地输出，不证明远程厂商后端失陷。",
       "independently_reproduced": false,
-      "review_status": "summary_review_only"
+      "review_status": "source_body_reviewed",
+      "import_review_status": "summary_review_only",
+      "source_review_note": "本地正文只显示最新推荐文章时间；首发日期改为未核实。描述支持自管Tomcat/Java Agent修改本地输出，不证明远程厂商后端失陷。",
+      "reviewed_at": "2026-10-15",
+      "displayed_recommendation_at": "2026-10-12",
+      "mapping_role": "author_claim_lead",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C40"
     },
     {
       "id": "C41",
@@ -690,9 +921,15 @@
         "F03",
         "F12"
       ],
-      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。已对照本地抓取正文抽查；未重新在线核对页面。",
+      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。",
       "independently_reproduced": false,
-      "review_status": "sampled_local_body"
+      "review_status": "source_body_reviewed",
+      "import_review_status": "sampled_local_body",
+      "source_review_note": "正文明确两个crackme样例及SMT约束，日期2026-10-03；教学求解耗时不外推商业产品。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "illustrative",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C41"
     },
     {
       "id": "C42",
@@ -703,13 +940,20 @@
       "retrieved_at": "2026-10-15",
       "case_type": "author_report",
       "access": "public_body",
-      "evidence_summary": "作者报告 WiFi 工具的本地授权规则分析。用于检查机器码、时间等可观察输入是否足以重算授权，具体成功范围限作者描述。",
+      "evidence_summary": "作者展示本地四位授权码由当前时分及前后时间窗判定，不包含签发方秘密或机器码。用于检查可预测授权规则与本地时间信任；成功范围限该样例主张。",
       "patterns": [
-        "F03"
+        "F03",
+        "F08"
       ],
-      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。本轮仅审阅导入摘要与分类，并检查本地来源存在及状态，未逐项对照正文。",
+      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。",
       "independently_reproduced": false,
-      "review_status": "summary_review_only"
+      "review_status": "source_body_reviewed",
+      "import_review_status": "summary_review_only",
+      "source_review_note": "正文实际按本地时分及前后时间窗判断四位码，没有机器码参与；修正摘要并增加F08维度。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "author_claim_lead",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C42"
     },
     {
       "id": "C43",
@@ -725,9 +969,15 @@
         "F01",
         "F05"
       ],
-      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。已对照本地抓取正文抽查；未重新在线核对页面。自制教学样本，不是商业产品保护被攻破。",
+      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。自制教学样本，不是商业产品保护被攻破。",
       "independently_reproduced": false,
-      "review_status": "sampled_local_body"
+      "review_status": "source_body_reviewed",
+      "import_review_status": "sampled_local_body",
+      "source_review_note": "原文LinkerDemo及映射/加载器视图代码支持教学完整性线索；不采用其把AES泛称校验算法的说法。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "illustrative",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C43"
     },
     {
       "id": "C44",
@@ -744,9 +994,15 @@
         "F02",
         "F06"
       ],
-      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。本轮仅审阅导入摘要与分类，并检查本地来源存在及状态，未逐项对照正文。",
+      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。",
       "independently_reproduced": false,
-      "review_status": "summary_review_only"
+      "review_status": "source_body_reviewed",
+      "import_review_status": "summary_review_only",
+      "source_review_note": "正文transform调用和四类patch支持运行时改写线索；代码已匿名化，不能推出RSA数学破解或对任意Java产品有效。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "author_claim_lead",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C44"
     },
     {
       "id": "C45",
@@ -762,9 +1018,15 @@
         "F06",
         "F09"
       ],
-      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。本轮仅审阅导入摘要与分类，并检查本地来源存在及状态，未逐项对照正文。求助主帖未成功，短答仅作为恢复路径线索。",
+      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。求助主帖未成功，短答仅作为恢复路径线索。",
       "independently_reproduced": false,
-      "review_status": "summary_review_only"
+      "review_status": "source_body_reviewed",
+      "import_review_status": "summary_review_only",
+      "source_review_note": "求助原帖与最佳答案区分清楚，短答讨论重启检查未经过原断点；仍缺完整执行轨迹。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "author_claim_lead",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C45"
     },
     {
       "id": "C46",
@@ -779,9 +1041,15 @@
       "patterns": [
         "F07"
       ],
-      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。本轮仅审阅导入摘要与分类，并检查本地来源存在及状态，未逐项对照正文。",
+      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。",
       "independently_reproduced": false,
-      "review_status": "summary_review_only"
+      "review_status": "source_body_reviewed",
+      "import_review_status": "summary_review_only",
+      "source_review_note": "正文只用响应分类推定授权码有效，未完成业务证明；十位数字本身不能推导实际熵或可枚举成功率。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "author_claim_lead",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C46"
     },
     {
       "id": "C47",
@@ -798,9 +1066,15 @@
         "F04",
         "F06"
       ],
-      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。本轮仅审阅导入摘要与分类，并检查本地来源存在及状态，未逐项对照正文。不沿用导入摘要的“48位原生”表述；架构与参数需产物证据。",
+      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。不沿用导入摘要的“48位原生”表述；架构与参数需产物证据。本轮逐条审阅发现：报告明确区分客户端签名私钥和服务器签名公钥，却又声称可伪造任意SignedDto；该泛化存在信任方向问题，不能当作已证实许可伪造。",
       "independently_reproduced": false,
-      "review_status": "summary_review_only"
+      "review_status": "source_body_reviewed",
+      "import_review_status": "summary_review_only",
+      "source_review_note": "报告明确区分客户端签名私钥和服务器签名公钥，却又声称可伪造任意SignedDto；该泛化存在信任方向问题，不能当作已证实许可伪造。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "architecture_check",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C47"
     },
     {
       "id": "C48",
@@ -816,9 +1090,15 @@
         "F01",
         "F05"
       ],
-      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。本轮仅审阅导入摘要与分类，并检查本地来源存在及状态，未逐项对照正文。public_partial：正文部分需回复或点赞，隐藏内容未获取，不能断言所有层均失效。",
+      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。public_partial：正文部分需回复或点赞，隐藏内容未获取，不能断言所有层均失效。本轮逐条审阅发现：可见正文只含前两层且有作者自述限制；APK读重定向还被注明不是freeRASP此处实际使用的路径，不能将通用设想全归于该产品。",
       "independently_reproduced": false,
-      "review_status": "summary_review_only"
+      "review_status": "partial_body_reviewed",
+      "import_review_status": "summary_review_only",
+      "source_review_note": "可见正文只含前两层且有作者自述限制；APK读重定向还被注明不是freeRASP此处实际使用的路径，不能将通用设想全归于该产品。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "author_claim_lead",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C48"
     },
     {
       "id": "C49",
@@ -831,9 +1111,15 @@
       "access": "public_body",
       "evidence_summary": "文章描述 Google Play Integrity 的客户端与 GMS 调用链，但本地链路可观察或可拦截不证明可伪造有效 token、通过后端验证或破解硬件证明。作为架构研究保留，不映射已确认失效模式。",
       "patterns": [],
-      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。本轮仅审阅导入摘要与分类，并检查本地来源存在及状态，未逐项对照正文。未证明伪造通过后端验证的token；不从客户端调用链推出证明体系失效。",
+      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。未证明伪造通过后端验证的token；不从客户端调用链推出证明体系失效。",
       "independently_reproduced": false,
-      "review_status": "summary_review_only"
+      "review_status": "source_body_reviewed",
+      "import_review_status": "summary_review_only",
+      "source_review_note": "正文展示客户端/GMS调用与证明数据，未证明伪造通过后端的有效token；保持架构研究、无失效模式映射。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "none",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C49"
     },
     {
       "id": "C50",
@@ -849,15 +1135,21 @@
         "F01",
         "F02"
       ],
-      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。本轮仅审阅导入摘要与分类，并检查本地来源存在及状态，未逐项对照正文。",
+      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。",
       "independently_reproduced": false,
-      "review_status": "summary_review_only"
+      "review_status": "source_body_reviewed",
+      "import_review_status": "summary_review_only",
+      "source_review_note": "正文明确需要另一VIP后台并描述服务替换；不能据此认定官方服务被攻破，也不采用加密返回即可解决问题的评论。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "author_claim_lead",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C50"
     },
     {
       "id": "C51",
-      "site": "RST Forums (Romanian Security Team)",
+      "site": "Naci’s blog（原站；另有RST转载）",
       "title": "Lifting Binaries, Part 0: Devirtualizing VMProtect and Themida: It's Just Flattening?",
-      "url": "https://rstforums.com/forum/topic/123934-lifting-binaries-part-0-devirtualizing-vmprotect-and-themida-its-just-flattening/",
+      "url": "https://nac-l.github.io/2025/01/25/lifting_0.html",
       "published_at": "2025-01-25",
       "retrieved_at": "2026-10-15",
       "case_type": "research_report",
@@ -866,11 +1158,18 @@
       "patterns": [
         "F12"
       ],
-      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。已对照本地抓取正文抽查；未重新在线核对页面。本地转载注明原文日期2025-01-25和nac-l.github.io出处；只读过转载文本，原始页面未重新核对。",
+      "limitations": "原始页面与转载对照确认日期及研究语境；小函数研究不等于任意商业程序完整恢复。未经本项目独立运行复现。",
       "independently_reproduced": false,
-      "review_status": "sampled_local_body",
+      "review_status": "source_body_reviewed",
       "reposted_at": "2025-09-25",
-      "original_url": "https://nac-l.github.io/2025/01/25/lifting_0.html"
+      "original_url": "https://nac-l.github.io/2025/01/25/lifting_0.html",
+      "import_review_status": "sampled_local_body",
+      "source_review_note": "原站确认2025-01-25和小函数lifting语境；改用原站URL，保留论坛转载链接及2025-09-25，实验范围不推广整个产品。",
+      "reviewed_at": "2026-10-15",
+      "repost_url": "https://rstforums.com/forum/topic/123934-lifting-binaries-part-0-devirtualizing-vmprotect-and-themida-its-just-flattening/",
+      "mapping_role": "illustrative",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C51"
     },
     {
       "id": "C52",
@@ -885,9 +1184,15 @@
       "patterns": [
         "F12"
       ],
-      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。本轮仅审阅导入摘要与分类，并检查本地来源存在及状态，未逐项对照正文。工具README，无已核实首发日期；纯函数与有限路径实验不能外推到完整产品。",
+      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。工具README，无已核实首发日期；纯函数与有限路径实验不能外推到完整产品。",
       "independently_reproduced": false,
-      "review_status": "summary_review_only"
+      "review_status": "source_body_reviewed",
+      "import_review_status": "summary_review_only",
+      "source_review_note": "README限定纯函数、有限路径、单基本块及实验性多块结果；无明确首发日期，不视为近期商业破解。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "illustrative",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C52"
     },
     {
       "id": "C53",
@@ -903,9 +1208,15 @@
         "F04",
         "F12"
       ],
-      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。本轮仅审阅导入摘要与分类，并检查本地来源存在及状态，未逐项对照正文。",
+      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。",
       "independently_reproduced": false,
-      "review_status": "summary_review_only"
+      "review_status": "source_body_reviewed",
+      "import_review_status": "summary_review_only",
+      "source_review_note": "正文区分2024-06-10首发和2024-10-30更新；教学keygenme及特定变异UPX不代表通用保护强度。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "illustrative",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C53"
     },
     {
       "id": "C54",
@@ -921,9 +1232,15 @@
         "F01",
         "F06"
       ],
-      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。本轮仅审阅导入摘要与分类，并检查本地来源存在及状态，未逐项对照正文。教学模板，无已核实首发日期与特定目标运行验证。",
+      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。教学模板，无已核实首发日期与特定目标运行验证。本轮逐条审阅发现：README将LVL说明与Pairip类路径混用，且未验证示例实现；只保留客户端结果可改的教学线索，不能据此说明平台真实实现。",
       "independently_reproduced": false,
-      "review_status": "summary_review_only"
+      "review_status": "source_body_reviewed",
+      "import_review_status": "summary_review_only",
+      "source_review_note": "README将LVL说明与Pairip类路径混用，且未验证示例实现；只保留客户端结果可改的教学线索，不能据此说明平台真实实现。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "illustrative",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C54"
     },
     {
       "id": "C55",
@@ -938,9 +1255,15 @@
       "patterns": [
         "F12"
       ],
-      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。本轮仅审阅导入摘要与分类，并检查本地来源存在及状态，未逐项对照正文。工具README，无已核实首发日期；VM区域识别不等于反虚拟化。",
+      "limitations": "来源作者主张，未经本项目独立复现或厂商确认；不证明当前产品版本仍受影响。工具README，无已核实首发日期；VM区域识别不等于反虚拟化。",
       "independently_reproduced": false,
-      "review_status": "summary_review_only"
+      "review_status": "source_body_reviewed",
+      "import_review_status": "summary_review_only",
+      "source_review_note": "README明示VM区域识别与验证不等于反虚拟化；工具能力清单不是实际目标破解结果。",
+      "reviewed_at": "2026-10-15",
+      "mapping_role": "illustrative",
+      "full_review_record": "docs/research/full-review-2026-10-15.json",
+      "full_review_id": "C55"
     }
   ],
   "initial_researched_at": "2026-10-14",
@@ -976,5 +1299,11 @@
       "criterion": "正文首次发表日期，非回复或抓取日期"
     },
     "scope": "本地正文抽查与摘要整理；非逐条事实核验，非全站覆盖，非独立运行复现。"
+  },
+  "full_review": {
+    "date": "2026-10-15",
+    "records": 53,
+    "report": "docs/research/full-review-2026-10-15.json",
+    "scope": "逐条对照可得正文的关键证据段、日期及模式映射；不等于逐行审计全文、附件、代码或独立运行复现。"
   }
 }

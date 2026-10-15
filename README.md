@@ -95,7 +95,7 @@ git clone https://github.com/MuCheng2007/software-protection-skill.git
 | --- | --- | --- |
 | F01 | 密码执行链、公钥或结果被改 | 验证器被改后，实际能力还由谁控制？ |
 | F02 | 伪造服务、替换授权配置 | 响应是否绑定正确发行者、产品、设备与权限？ |
-| F03 | 可逆校验与发卡规则泄漏 | 客户端是否具有自行发卡的能力？ |
+| F03 | 客户端可重算发卡规则 | 客户端是否具有自行发卡的能力？ |
 | F04 | 打包、字节码、资源误作保密 | 发布包到底交给用户哪些秘密？ |
 | F05 | 加载与更新链完整性缺口 | 验证的文件是否就是执行的文件？ |
 | F06 | 多处检查共享可改状态 | 多层保护是否仍依赖一个布尔值？ |
@@ -110,11 +110,11 @@ git clone https://github.com/MuCheng2007/software-protection-skill.git
 
 ## 📚 案例与证据
 
-目前记录 **53 条候选资料、12 类失效模式**。候选包含实践主张、教学样例、历史补充和排除记录，**不等于 53 款已确认破解的软件**。来源包括看雪、飘云阁、吾爱破解、Habr、GitHub与个人研究文章。新增材料采用局部正文抽查，未逐条在线重读，论坛覆盖仍不完整。
+目前记录 **53 条候选资料、12 类失效模式**。候选包含实践主张、教学样例、历史补充和排除记录，**不等于 53 款已确认破解的软件**。来源包括看雪、飘云阁、吾爱破解、Habr、GitHub与个人研究文章。已逐条核对可得正文的关键证据，分别标明局部可读、日期未知与原文推测；不是所有记录都重新在线抓取，论坛覆盖仍不完整。
 
 案例按原始发表日期与读取范围记录，保留来源、前置条件和局限。当前没有第三方样本的独立复现，不将作者声称成功写成已验证事实，也不据此断言产品当前版本仍存在缺陷。
 
-➡️ [阅读案例索引](docs/cases.md) · [结构化资料](skills/software-protection/references/forum-cases.json) · [飘云阁补查](docs/research/chinapyg-supplement-report.md)
+➡️ [53条逐条核验报告](docs/research/full-review-2026-10-15.md) · [阅读案例索引](docs/cases.md) · [结构化资料](skills/software-protection/references/forum-cases.json) · [飘云阁补查](docs/research/chinapyg-supplement-report.md)
 
 ## 🔄 持续更新
 

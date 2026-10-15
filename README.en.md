@@ -100,7 +100,7 @@ Skill directory reference: [OpenAI documentation](https://developers.openai.com/
 | --- | --- | --- |
 | F01 | Tampered cryptographic execution, public keys, or results | Who controls the actual capability when the verifier is modified? |
 | F02 | Fake services or replaced licensing configuration | Is the response bound to the correct issuer, product, device, and permissions? |
-| F03 | Reversible checks or exposed license-generation rules | Can the client issue its own licenses? |
+| F03 | Client-reconstructible license-generation rules | Can the client issue its own licenses? |
 | F04 | Packaging, bytecode, or assets mistaken for secrecy | Which secrets are actually shipped to the user? |
 | F05 | Gaps in loading and update integrity | Is the verified file the file that executes? |
 | F06 | Multiple checks sharing mutable state | Do all protection layers still depend on one writable boolean? |
@@ -115,11 +115,11 @@ See [failure-patterns.md](skills/software-protection/references/failure-patterns
 
 ## 📚 Cases and evidence
 
-The collection now contains **53 candidate source records and 12 failure patterns**. Records include practical claims, educational examples, historical context, and exclusions. **This does not mean 53 independently confirmed cracked products.** Sources include Kanxue, ChinaPYG, 52pojie, Habr, GitHub, and individual research posts. New material received local-text spot checks, not a complete online review; source coverage remains incomplete.
+The collection now contains **53 candidate source records and 12 failure patterns**. Records include practical claims, educational examples, historical context, and exclusions. **This does not mean 53 independently confirmed cracked products.** Sources include Kanxue, ChinaPYG, 52pojie, Habr, GitHub, and individual research posts. Each record now has a review of its available source passages, date basis, classification, and pattern mapping. Partial access and unresolved dates remain explicit; this is not a complete online recrawl or runtime reproduction.
 
 Records preserve original publication dates, the extent of material read, sources, prerequisites, and limitations. No third-party samples have been independently reproduced. Authors' success claims are not presented as verified results or evidence that current product versions remain vulnerable.
 
-➡️ [Case index](docs/cases.md) · [Structured records](skills/software-protection/references/forum-cases.json) · [ChinaPYG follow-up](docs/research/chinapyg-supplement-report.md)
+➡️ [Per-record evidence review (Chinese)](docs/research/full-review-2026-10-15.md) · [Case index](docs/cases.md) · [Structured records](skills/software-protection/references/forum-cases.json) · [ChinaPYG follow-up](docs/research/chinapyg-supplement-report.md)
 
 ## 🔄 Ongoing maintenance
 

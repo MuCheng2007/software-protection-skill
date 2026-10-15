@@ -7,6 +7,7 @@ import json
 import re
 import sys
 import xml.etree.ElementTree as ET
+from collections import Counter
 
 
 def validate(root: Path) -> dict:
@@ -66,7 +67,7 @@ def validate(root: Path) -> dict:
     pattern_text = (skill / 'references/failure-patterns.md').read_text(encoding='utf-8')
     patterns = set(re.findall(r'^## (F\d{2}) ', pattern_text, re.M))
     check(set(re.findall(r'\bC\d{2}\b', pattern_text)) <= set(ids), 'Unknown case referenced in patterns')
-    allowed_hosts = {'www.chinapyg.com', 'www.ofweek.com', 'blog.csdn.net', 'dmitrybrant.com', 'www.cnblogs.com', 'github.com', 'rstforums.com', 'overkazaf.github.io', 'vxcall.github.io', 'www.52hb.com', 'www.52pojie.cn', 'bbs.kanxue.com', 'habr.com'}
+    allowed_hosts = {'bbs.kanxue.com', 'habr.com', 'nac-l.github.io', 'github.com', 'blog.csdn.net', 'overkazaf.github.io', 'dmitrybrant.com', 'www.52hb.com', 'www.52pojie.cn', 'www.chinapyg.com', 'www.ofweek.com', 'vxcall.github.io', 'www.cnblogs.com'}
     for c in cases:
         cid = c['id']
         for field in ['site', 'title', 'url', 'retrieved_at', 'case_type', 'access',
@@ -127,11 +128,60 @@ def validate(root: Path) -> dict:
             by_id = {c['id']: c for c in cases}
             for record in records:
                 if record['input_id'] in new_ids:
-                    check(by_id.get(record['input_id'], {}).get('review_status') == record['review_status'],
+                    check(by_id.get(record['input_id'], {}).get('import_review_status', by_id.get(record['input_id'], {}).get('review_status')) == record['review_status'],
                           'Case review status differs from audit')
         english = (root / 'README.en.md').read_text(encoding='utf-8')
         check(f'**{len(cases)} candidate source records and {len(patterns)} failure patterns**' in english,
               'English README counts do not match evidence')
+    full_review = payload.get('full_review')
+    if full_review:
+        review_path = root / full_review['report']
+        check(review_path.resolve().is_relative_to(root), 'Review path escapes repository')
+        check(review_path.is_file(), 'Full review report missing')
+        if review_path.is_file():
+            review = json.loads(review_path.read_text(encoding='utf-8'))
+            reviewed = review['records']
+            review_ids = [r['id'] for r in reviewed]
+            check(len(review_ids) == len(set(review_ids)), 'Duplicate full review ID')
+            check(set(review_ids) == set(ids), 'Full review does not cover case IDs exactly')
+            check(full_review['records'] == len(cases), 'Full review count mismatch')
+            check(dict(Counter(r['review_status'] for r in reviewed)) == review['counts'],
+                  'Full review scope counts mismatch')
+            by_id = {c['id']: c for c in cases}
+            reproduced = 0
+            for record in reviewed:
+                case = by_id.get(record['id'], {})
+                check(record['review_status'] in {'source_body_reviewed', 'partial_body_reviewed',
+                                                 'header_only_reviewed'}, 'Invalid full review status')
+                check(record['review_status'] == case.get('review_status'), 'Latest case review differs')
+                check(record['url'] == case.get('url'), 'Review source URL differs')
+                check(bool(record.get('finding')) and bool(record.get('evidence')), 'Review evidence missing')
+                check(set(record['checked']) == {'source_identity', 'publication_date_basis', 'case_type',
+                                                'mechanism_scope', 'pattern_mapping'}, 'Review dimensions missing')
+                check(record['mapping_role'] == case.get('mapping_role'), 'Mapping role differs')
+                check((record['mapping_role'] == 'none') == (not case.get('patterns')),
+                      'Mapping role and patterns disagree')
+                check(record['independently_reproduced'] == case.get('independently_reproduced'),
+                      'Review reproduction claim differs')
+                if record['date_status'] == 'source_date_checked':
+                    check(case.get('published_at') is not None, 'Checked date is missing')
+                else:
+                    check(case.get('published_at') is None, 'Unresolved date claimed as known')
+                reproduced += bool(record['independently_reproduced'])
+                for evidence in record['evidence']:
+                    check(evidence['kind'] in {'provided_text_snapshot', 'public_page_read'},
+                          'Unknown source evidence type')
+                    if evidence['kind'] == 'provided_text_snapshot':
+                        check(re.fullmatch(r'[0-9a-f]{64}', evidence['sha256']) is not None,
+                              'Invalid full review source digest')
+                        check(evidence['bytes'] > 0, 'Empty review source')
+                        check(bool(evidence['line_ranges']), 'Source line references missing')
+                        for start, end in evidence['line_ranges']:
+                            check(isinstance(start, int) and isinstance(end, int) and 0 < start <= end,
+                                  'Invalid source line reference')
+                    else:
+                        check(bool(evidence['sections']), 'Public-page locator missing')
+            check(reproduced == review['runtime_reproductions'], 'Runtime reproduction count mismatch')
     svg = ET.fromstring((root / 'assets/hero.svg').read_text(encoding='utf-8'))
     check(svg.tag.endswith('svg'), 'Hero is not SVG')
     for el in svg.iter():

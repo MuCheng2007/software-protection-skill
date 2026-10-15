@@ -1,0 +1,875 @@
+{
+  "reviewed_at": "2026-10-15",
+  "scope": "逐条对照可得正文的关键证据段、日期及模式映射；不等于逐行审计全文、附件、代码或独立运行复现。",
+  "counts": {
+    "source_body_reviewed": 44,
+    "partial_body_reviewed": 8,
+    "header_only_reviewed": 1
+  },
+  "runtime_reproductions": 0,
+  "online_access_gaps": [
+    "C38原帖在线访问受限，已核转载正文与出处",
+    "C40在线安全验证，已核本地正文但首发日期未知"
+  ],
+  "records": [
+    {
+      "id": "C01",
+      "url": "https://bbs.kanxue.com/thread-293138.htm",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "illustrative",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "原文明确使用自制VMP Demo，需已知ProductCode；e=1的等式还需输入小于模数，不能称为RSA算法被攻破。",
+      "evidence": [
+        {
+          "kind": "public_page_read",
+          "url": "https://bbs.kanxue.com/thread-293138.htm",
+          "sections": [
+            "发表时间2026-10-03",
+            "自制Demo与正常序列号/ProductCode前提",
+            "e=1与c<n说明"
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C02",
+      "url": "https://bbs.kanxue.com/thread-292131.htm",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "author_claim_lead",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "正文有密码调用替换和指纹比较说明；只能支持该版本本地执行链修改，不能外推所有版本或服务端授权。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://bbs.kanxue.com/thread-292131.htm",
+          "sha256": "46a6db94d8a12a2c3a5386143bdfc205783a80639fb641c40f2d745eab5d53db",
+          "bytes": 10241,
+          "line_ranges": [
+            [
+              70,
+              78
+            ],
+            [
+              100,
+              145
+            ]
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C03",
+      "url": "https://bbs.kanxue.com/thread-292945.htm",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "author_claim_lead",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "正文区分归档哈希、解包目录和seed/OTA恢复；属于开源组件行为修改，不是付费授权破解。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://bbs.kanxue.com/thread-292945.htm",
+          "sha256": "b5402a648c32de4153ae0d24fd5b5b2c4cc4d9d52ab4e7ba88298cffbdc5f8c8",
+          "bytes": 16885,
+          "line_ranges": [
+            [
+              148,
+              200
+            ]
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C04",
+      "url": "https://bbs.kanxue.com/thread-292855.htm",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "author_claim_lead",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "正文报告替换软件位配置并讨论后台字段；软件标识符不是权限，跨软件位冲突属于未测试推测；不采用原文对RSA/ECDH的泛化解释。",
+      "evidence": [
+        {
+          "kind": "public_page_read",
+          "url": "https://bbs.kanxue.com/thread-292855.htm",
+          "sections": [
+            "发表时间2026-09-04",
+            "配置替换实践",
+            "后台字段与未测试推测"
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C05",
+      "url": "https://bbs.kanxue.com/thread-292949.htm",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "illustrative",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "原文有场景设定和情况A/B的假设结果，没有实际目标；保持假设教程分类。",
+      "evidence": [
+        {
+          "kind": "public_page_read",
+          "url": "https://bbs.kanxue.com/thread-292949.htm",
+          "sections": [
+            "发表时间2026-09-14",
+            "场景设定",
+            "情况A/B"
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C06",
+      "url": "https://bbs.kanxue.com/thread-292960.htm",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "illustrative",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "浏览器正文确认绝对日期2026-09-15，并给出查表及日志代码；网页工具缓存只显示相对日期，不能据此重算日期。",
+      "evidence": [
+        {
+          "kind": "public_page_read",
+          "url": "https://bbs.kanxue.com/thread-292960.htm",
+          "sections": [
+            "浏览器绝对日期2026-09-15",
+            "查表与Log代码"
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C07",
+      "url": "https://bbs.kanxue.com/thread-291357.htm",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "architecture_check",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "对话式文章列出分析和三种建议方案，没有闭合的运行验证轨迹；降为架构分析，不把建议补丁写成已成功执行。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://bbs.kanxue.com/thread-291357.htm",
+          "sha256": "f117de9696583d827c0ae5fb1f137fa45acdc00e3d283cbf59d72c4f7cbb1fca",
+          "bytes": 16063,
+          "line_ranges": [
+            [
+              87,
+              110
+            ],
+            [
+              390,
+              424
+            ]
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C08",
+      "url": "https://bbs.kanxue.com/thread-290437.htm",
+      "review_status": "partial_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "author_claim_lead",
+      "result": "limited_evidence",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "可读正文含本地序列号处理与变种CRC约束，后续内容有登录提示；保留局部机制线索，不等于完整注册机或样本复现。",
+      "evidence": [
+        {
+          "kind": "public_page_read",
+          "url": "https://bbs.kanxue.com/thread-290437.htm",
+          "sections": [
+            "发表时间2026-03-21",
+            "本地规范化与变种CRC",
+            "登录隐藏部分"
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C09",
+      "url": "https://bbs.kanxue.com/thread-285076.htm",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "illustrative",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "原文明示自编测试样本及正常序列号前提，并排除网络验证分析；修正为历史教学演示。",
+      "evidence": [
+        {
+          "kind": "public_page_read",
+          "url": "https://bbs.kanxue.com/thread-285076.htm",
+          "sections": [
+            "发表时间2025-01-01",
+            "自编测试样本",
+            "正常序列号前提",
+            "不分析网络验证声明"
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C10",
+      "url": "https://www.52hb.com/thread-53818-1-1.html",
+      "review_status": "partial_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "none",
+      "result": "limited_evidence",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "确认2022-01-01及隐藏内容提示；可读内容不足以复核具体机制，保留无模式映射。",
+      "evidence": [
+        {
+          "kind": "public_page_read",
+          "url": "https://www.52hb.com/thread-53818-1-1.html",
+          "sections": [
+            "发表时间2022-01-01",
+            "隐藏内容提示"
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C11",
+      "url": "https://www.52hb.com/thread-58093-1-1.html",
+      "review_status": "partial_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "none",
+      "result": "limited_evidence",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "确认2023-03-01及隐藏内容提示；标题中的心跳不能作为成功绕过证据。",
+      "evidence": [
+        {
+          "kind": "public_page_read",
+          "url": "https://www.52hb.com/thread-58093-1-1.html",
+          "sections": [
+            "发表时间2023-03-01",
+            "前置知识",
+            "隐藏内容提示"
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C12",
+      "url": "https://bbs.kanxue.com/thread-291758.htm",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "none",
+      "result": "excluded",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "正文是保护产品的推广性架构主张，没有可核对攻击验证链；继续排除。",
+      "evidence": [
+        {
+          "kind": "public_page_read",
+          "url": "https://bbs.kanxue.com/thread-291758.htm",
+          "sections": [
+            "发表时间2026-06-23",
+            "产品推广主张"
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C13",
+      "url": "https://bbs.kanxue.com/thread-291130.htm",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "none",
+      "result": "excluded",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "正文提供部署与营销性主张，未给出对抗测试；继续排除，不能据此宣称私有部署天然更安全。",
+      "evidence": [
+        {
+          "kind": "public_page_read",
+          "url": "https://bbs.kanxue.com/thread-291130.htm",
+          "sections": [
+            "发表时间2026-05-07",
+            "部署说明与推广主张"
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C14",
+      "url": "https://bbs.kanxue.com/thread-283941.htm",
+      "review_status": "partial_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "none",
+      "result": "excluded",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "本次核到2024-10-14，公开部分只有设置链接且关键正文隐藏；修正日期，仍排除机制证据。",
+      "evidence": [
+        {
+          "kind": "public_page_read",
+          "url": "https://bbs.kanxue.com/thread-283941.htm",
+          "sections": [
+            "发表时间2024-10-14",
+            "官网设置链接",
+            "回复或点赞隐藏提示"
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C15",
+      "url": "https://bbs.kanxue.com/thread-293045-19.htm",
+      "review_status": "header_only_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "none",
+      "result": "excluded",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "浏览器仅查看回复分页标题与发表时间2026-09-25，未打开下载或附件；标题更新日不是发表日，继续排除分发记录。",
+      "evidence": [
+        {
+          "kind": "public_page_read",
+          "url": "https://bbs.kanxue.com/thread-293045-19.htm",
+          "sections": [
+            "回复分页的标题与发表时间2026-09-25"
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C16",
+      "url": "https://www.chinapyg.com/thread-167556-1-1.html",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "author_claim_lead",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "原文给出128-bit模数及本地/在线/恢复路径；复算模数位数，但不采用作者泛化的分解耗时或统一3072位要求。",
+      "evidence": [
+        {
+          "kind": "public_page_read",
+          "url": "https://www.chinapyg.com/thread-167556-1-1.html",
+          "sections": [
+            "发表时间2026-06-20",
+            "snvrfy",
+            "128-bit模数",
+            "在线响应与plist恢复"
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C17",
+      "url": "https://www.chinapyg.com/thread-168526-1-1.html",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "illustrative",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "原文明示手写CTF_Demo与三种本地校验，日期为2026-08-04；只作教学，修复建议仍需独立判断。",
+      "evidence": [
+        {
+          "kind": "public_page_read",
+          "url": "https://www.chinapyg.com/thread-168526-1-1.html",
+          "sections": [
+            "发表时间2026-08-04 20:56",
+            "自制CTF_Demo",
+            "本地校验与日志"
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C18",
+      "url": "https://www.chinapyg.com/thread-168527-1-1.html",
+      "review_status": "partial_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "author_claim_lead",
+      "result": "limited_evidence",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "楼主自述移除VBA模块及修复调用，未给完整轨迹；CPU/MAC/校名是作者描述，不能认定服务器被攻破。",
+      "evidence": [
+        {
+          "kind": "public_page_read",
+          "url": "https://www.chinapyg.com/thread-168527-1-1.html",
+          "sections": [
+            "发表时间2026-08-04 22:23",
+            "楼主移除VBA模块的说明"
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C19",
+      "url": "https://www.chinapyg.com/thread-169102-1-1.html",
+      "review_status": "partial_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "author_claim_lead",
+      "result": "limited_evidence",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "普通页本次仅返回回复；公开打印页确认原楼主2026-09-03的公钥替换和配置说明，且作者答复只适配所给版本；不视为完整实现验证。",
+      "evidence": [
+        {
+          "kind": "public_page_read",
+          "url": "https://www.chinapyg.com/forum.php?mod=viewthread&action=printable&tid=169102",
+          "sections": [
+            "公开打印页原楼主时间2026-09-03 13:36",
+            "用法说明",
+            "作者对其他版本不适配的答复"
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C20",
+      "url": "https://www.chinapyg.com/thread-169167-1-1.html",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "none",
+      "result": "excluded",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "原帖只提供算号服务，未披露算法；保留排除，不保存回复激活信息。",
+      "evidence": [
+        {
+          "kind": "public_page_read",
+          "url": "https://www.chinapyg.com/thread-169167-1-1.html",
+          "sections": [
+            "发表时间2026-09-07",
+            "楼主仅提供算号的说明"
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C21",
+      "url": "https://bbs.kanxue.com/thread-290636-1.htm",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "author_claim_lead",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "正文的验签后模块结果消费支持映射；RSA-1024概述与256字节签名分析相冲突，保持参数未核定。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://bbs.kanxue.com/thread-290636-1.htm",
+          "sha256": "d1de6178381fc7f13be09e9a8e59dc9a0e9afcc5a05c630beedba11702bb0e16",
+          "bytes": 45432,
+          "line_ranges": [
+            [
+              100,
+              100
+            ],
+            [
+              343,
+              344
+            ],
+            [
+              892,
+              905
+            ],
+            [
+              997,
+              1054
+            ]
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C23",
+      "url": "https://bbs.kanxue.com/thread-293074.htm",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "author_claim_lead",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "正文结果码路由和注册码约束支持本地规则重建线索；没有独立验证发出的授权或所有功能。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://bbs.kanxue.com/thread-293074.htm",
+          "sha256": "8bd81d00385ecbe02ec2ca1aed361c0fa15e7f60f654cb47fc88dd25da547959",
+          "bytes": 35819,
+          "line_ranges": [
+            [
+              113,
+              140
+            ],
+            [
+              175,
+              209
+            ],
+            [
+              504,
+              560
+            ]
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C24",
+      "url": "https://www.52pojie.cn/thread-2129372-1-1.html",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "author_claim_lead",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "对原文模数及因子复算为108/32/76 bit且乘积相等；1344位是容器描述。分支替换和弱参数是不同问题。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://www.52pojie.cn/thread-2129372-1-1.html",
+          "sha256": "4493fb88d0d51d760c22e025921c226d4d1090cba7d6a84f4cf0d73447baee75",
+          "bytes": 17476,
+          "line_ranges": [
+            [
+              168,
+              168
+            ],
+            [
+              276,
+              295
+            ],
+            [
+              341,
+              343
+            ]
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C25",
+      "url": "https://www.52pojie.cn/thread-1952584-1-3.html",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "author_claim_lead",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "正文公式和演示代码支持客户端重算注册码；哈希不是可逆加密，盐可见只是客户端具备全部计算条件的一部分。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://www.52pojie.cn/thread-1952584-1-3.html",
+          "sha256": "84d76f12d8dc55243eae8bc5237765a0ca159889ce9c2b71a243fe7d70a490aa",
+          "bytes": 11533,
+          "line_ranges": [
+            [
+              170,
+              170
+            ],
+            [
+              208,
+              256
+            ]
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C26",
+      "url": "https://bbs.kanxue.com/thread-292938.htm",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "architecture_check",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "正文后半有native静态分析补充，但密码原语仍列待动态确认；不能因Java不验签或返回布尔值就认定native验签失效。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://bbs.kanxue.com/thread-292938.htm",
+          "sha256": "de909c3483e73c634966a1c07426574025991a30be92a7ede53db2a3992c5cc6",
+          "bytes": 232217,
+          "line_ranges": [
+            [
+              1897,
+              1963
+            ],
+            [
+              2537,
+              2587
+            ],
+            [
+              2735,
+              2753
+            ]
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C27",
+      "url": "https://www.52pojie.cn/thread-2048656-1-5.html",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "author_claim_lead",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "短帖有阻断/恢复通信后的不同表现，缺版本与完整协议；只能支持来源主张，不能统计心跳破解普遍性。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://www…10926 tokens truncated…] in {'sampled_local_body', 'summary_review_only'},
+                      'Invalid supplement review status')
+                if record['review_status'] == 'sampled_local_body':
+                    sampled.add(record['input_id'])
+            check(sampled == set(supplement['sampled_local_body']), 'Sample review scope mismatch')
+            by_id = {c['id']: c for c in cases}
+            for record in records:
+                if record['input_id'] in new_ids:
+                    check(by_id.get(record['input_id'], {}).get('import_review_status', by_id.get(record['input_id'], {}).get('review_status')) == record['review_status'],
+                          'Case review status differs from audit')
+        english = (root / 'README.en.md').read_text(encoding='utf-8')
+        check(f'**{len(cases)} candidate source records and {len(patterns)} failure patterns**' in english,
+              'English README counts do not match evidence')
+    full_review = payload.get('full_review')
+    if full_review:
+        review_path = root / full_review['report']
+        check(review_path.resolve().is_relative_to(root), 'Review path escapes repository')
+        check(review_path.is_file(), 'Full review report missing')
+        if review_path.is_file():
+            review = json.loads(review_path.read_text(encoding='utf-8'))
+            reviewed = review['records']
+            review_ids = [r['id'] for r in reviewed]
+            check(len(review_ids) == len(set(review_ids)), 'Duplicate full review ID')
+            check(set(review_ids) == set(ids), 'Full review does not cover case IDs exactly')
+            check(full_review['records'] == len(cases), 'Full review count mismatch')
+            check(dict(Counter(r['review_status'] for r in reviewed)) == review['counts'],
+                  'Full review scope counts mismatch')
+            by_id = {c['id']: c for c in cases}
+            reproduced = 0
+            for record in reviewed:
+                case = by_id.get(record['id'], {})
+                check(record['review_status'] in {'source_body_reviewed', 'partial_body_reviewed',
+                                                 'header_only_reviewed'}, 'Invalid full review status')
+                check(record['review_status'] == case.get('review_status'), 'Latest case review differs')
+                check(record['url'] == case.get('url'), 'Review source URL differs')
+                check(bool(record.get('finding')) and bool(record.get('evidence')), 'Review evidence missing')
+                check(set(record['checked']) == {'source_identity', 'publication_date_basis', 'case_type',
+                                                'mechanism_scope', 'pattern_mapping'}, 'Review dimensions missing')
+                check(record['mapping_role'] == case.get('mapping_role'), 'Mapping role differs')
+                check((record['mapping_role'] == 'none') == (not case.get('patterns')),
+                      'Mapping role and patterns disagree')
+                check(record['independently_reproduced'] == case.get('independently_reproduced'),
+                      'Review reproduction claim differs')
+                if record['date_status'] == 'source_date_checked':
+                    check(case.get('published_at') is not None, 'Checked date is missing')
+                else:
+                    check(case.get('published_at') is None, 'Unresolved date claimed as known')
+                reproduced += bool(record['independently_reproduced'])
+                for evidence in record['evidence']:
+                    check(evidence['kind'] in {'provided_text_snapshot', 'public_page_read'},
+                          'Unknown source evidence type')
+                    if evidence['kind'] == 'provided_text_snapshot':
+                        check(re.fullmatch(r'[0-9a-f]{64}', evidence['sha256']) is not None,
+                              'Invalid full review source digest')
+                        check(evidence['bytes'] > 0, 'Empty review source')
+                        check(bool(evidence['line_ranges']), 'Source line references missing')
+                        for start, end in evidence['line_ranges']:
+                            check(isinstance(start, int) and isinstance(end, int) and 0 < start <= end,
+                                  'Invalid source line reference')
+                    else:
+                        check(bool(evidence['sections']), 'Public-page locator missing')
+            check(reproduced == review['runtime_reproductions'], 'Runtime reproduction count mismatch')
+    svg = ET.fromstring((root / 'assets/hero.svg').read_text(encoding='utf-8'))
+    check(svg.tag.endswith('svg'), 'Hero is not SVG')
+    for el in svg.iter():
+        check(not el.tag.endswith(('script', 'foreignObject')), 'Active content in hero')
+        check(not any(k.lower().startswith('on') for k in el.attrib), 'Event handler in hero')
+
+    return {'ok': not errors, 'case_records': len(cases), 'failure_patterns': len(patterns),
+            'internal_links': internal_links, 'errors': errors,
+            'scope': 'Structure/evidence consistency only; not software protection effectiveness.'}
+
+
+if __name__ == '__main__':
+    result = validate(Path(__file__).resolve().parents[1])
+    print(json.dumps(result, ensure_ascii=False, indent=2))
+    sys.exit(0 if result['ok'] else 1)
