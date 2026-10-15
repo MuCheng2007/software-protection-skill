@@ -796,80 +796,1050 @@
       "evidence": [
         {
           "kind": "provided_text_snapshot",
-          "url": "https://www…10926 tokens truncated…] in {'sampled_local_body', 'summary_review_only'},
-                      'Invalid supplement review status')
-                if record['review_status'] == 'sampled_local_body':
-                    sampled.add(record['input_id'])
-            check(sampled == set(supplement['sampled_local_body']), 'Sample review scope mismatch')
-            by_id = {c['id']: c for c in cases}
-            for record in records:
-                if record['input_id'] in new_ids:
-                    check(by_id.get(record['input_id'], {}).get('import_review_status', by_id.get(record['input_id'], {}).get('review_status')) == record['review_status'],
-                          'Case review status differs from audit')
-        english = (root / 'README.en.md').read_text(encoding='utf-8')
-        check(f'**{len(cases)} candidate source records and {len(patterns)} failure patterns**' in english,
-              'English README counts do not match evidence')
-    full_review = payload.get('full_review')
-    if full_review:
-        review_path = root / full_review['report']
-        check(review_path.resolve().is_relative_to(root), 'Review path escapes repository')
-        check(review_path.is_file(), 'Full review report missing')
-        if review_path.is_file():
-            review = json.loads(review_path.read_text(encoding='utf-8'))
-            reviewed = review['records']
-            review_ids = [r['id'] for r in reviewed]
-            check(len(review_ids) == len(set(review_ids)), 'Duplicate full review ID')
-            check(set(review_ids) == set(ids), 'Full review does not cover case IDs exactly')
-            check(full_review['records'] == len(cases), 'Full review count mismatch')
-            check(dict(Counter(r['review_status'] for r in reviewed)) == review['counts'],
-                  'Full review scope counts mismatch')
-            by_id = {c['id']: c for c in cases}
-            reproduced = 0
-            for record in reviewed:
-                case = by_id.get(record['id'], {})
-                check(record['review_status'] in {'source_body_reviewed', 'partial_body_reviewed',
-                                                 'header_only_reviewed'}, 'Invalid full review status')
-                check(record['review_status'] == case.get('review_status'), 'Latest case review differs')
-                check(record['url'] == case.get('url'), 'Review source URL differs')
-                check(bool(record.get('finding')) and bool(record.get('evidence')), 'Review evidence missing')
-                check(set(record['checked']) == {'source_identity', 'publication_date_basis', 'case_type',
-                                                'mechanism_scope', 'pattern_mapping'}, 'Review dimensions missing')
-                check(record['mapping_role'] == case.get('mapping_role'), 'Mapping role differs')
-                check((record['mapping_role'] == 'none') == (not case.get('patterns')),
-                      'Mapping role and patterns disagree')
-                check(record['independently_reproduced'] == case.get('independently_reproduced'),
-                      'Review reproduction claim differs')
-                if record['date_status'] == 'source_date_checked':
-                    check(case.get('published_at') is not None, 'Checked date is missing')
-                else:
-                    check(case.get('published_at') is None, 'Unresolved date claimed as known')
-                reproduced += bool(record['independently_reproduced'])
-                for evidence in record['evidence']:
-                    check(evidence['kind'] in {'provided_text_snapshot', 'public_page_read'},
-                          'Unknown source evidence type')
-                    if evidence['kind'] == 'provided_text_snapshot':
-                        check(re.fullmatch(r'[0-9a-f]{64}', evidence['sha256']) is not None,
-                              'Invalid full review source digest')
-                        check(evidence['bytes'] > 0, 'Empty review source')
-                        check(bool(evidence['line_ranges']), 'Source line references missing')
-                        for start, end in evidence['line_ranges']:
-                            check(isinstance(start, int) and isinstance(end, int) and 0 < start <= end,
-                                  'Invalid source line reference')
-                    else:
-                        check(bool(evidence['sections']), 'Public-page locator missing')
-            check(reproduced == review['runtime_reproductions'], 'Runtime reproduction count mismatch')
-    svg = ET.fromstring((root / 'assets/hero.svg').read_text(encoding='utf-8'))
-    check(svg.tag.endswith('svg'), 'Hero is not SVG')
-    for el in svg.iter():
-        check(not el.tag.endswith(('script', 'foreignObject')), 'Active content in hero')
-        check(not any(k.lower().startswith('on') for k in el.attrib), 'Event handler in hero')
-
-    return {'ok': not errors, 'case_records': len(cases), 'failure_patterns': len(patterns),
-            'internal_links': internal_links, 'errors': errors,
-            'scope': 'Structure/evidence consistency only; not software protection effectiveness.'}
-
-
-if __name__ == '__main__':
-    result = validate(Path(__file__).resolve().parents[1])
-    print(json.dumps(result, ensure_ascii=False, indent=2))
-    sys.exit(0 if result['ok'] else 1)
+          "url": "https://www.52pojie.cn/thread-2048656-1-5.html",
+          "sha256": "4e83d474a76760809117c804115d92a47aa71af5d7c44842f1823753a702cdc8",
+          "bytes": 7336,
+          "line_ranges": [
+            [
+              168,
+              180
+            ]
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C28",
+      "url": "https://habr.com/ru/articles/964386/",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "author_claim_lead",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "俄文正文包含文件许可、HASP和本地时间检查；核对时间与入口线索，硬件协议和后端结果未完整验证。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://habr.com/ru/articles/964386/",
+          "sha256": "5cb7956476c46291e49e80a64f011354fde57a973cb4a7314edc177c3bd32281",
+          "bytes": 92862,
+          "line_ranges": [
+            [
+              14,
+              30
+            ],
+            [
+              618,
+              618
+            ],
+            [
+              731,
+              847
+            ],
+            [
+              1495,
+              1554
+            ]
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C29",
+      "url": "https://dmitrybrant.com/2026/02/01/defeating-a-40-year-old-copy-protection-dongle",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "author_claim_lead",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "作者原站Posted on及time元素确认2026-02-01；正文说常量返回及复制例程，且作者保留另有保护的可能。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://dmitrybrant.com/2026/02/01/defeating-a-40-year-old-copy-protection-dongle",
+          "sha256": "0c13f9e609ae5553287bb4c2f32881d4d833a7392fd098ee26375a2187751c66",
+          "bytes": 11516,
+          "line_ranges": [
+            [
+              148,
+              193
+            ]
+          ]
+        },
+        {
+          "kind": "public_page_read",
+          "url": "https://dmitrybrant.com/2026/02/01/defeating-a-40-year-old-copy-protection-dongle",
+          "sections": [
+            "Posted on与time元数据",
+            "常量输出及作者保留意见"
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C30",
+      "url": "https://habr.com/en/articles/1008824/",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "illustrative",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "Habr time元素确认2026-03-11；保护库作者的设计回顾并非独立攻防评测，地址计算和主动异常不能直接作为推荐防御。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://habr.com/en/articles/1008824/",
+          "sha256": "4b3b82394dc0cb955fcfa3b8d960e7986c1f2fe6f28692891ab7269233e77b43",
+          "bytes": 43213,
+          "line_ranges": [
+            [
+              25,
+              52
+            ],
+            [
+              68,
+              93
+            ],
+            [
+              269,
+              307
+            ]
+          ]
+        },
+        {
+          "kind": "public_page_read",
+          "url": "https://habr.com/en/articles/1008824/",
+          "sections": [
+            "time datetime=2026-03-11T08:07:45.000Z"
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C31",
+      "url": "https://www.52pojie.cn/thread-2110293-1-1.html",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "author_claim_lead",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "正文展示本地privilege等消费点，未证明服务端会员权限被改变；内嵌密钥的角色也未单独验证。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://www.52pojie.cn/thread-2110293-1-1.html",
+          "sha256": "b3a4230ec0f2fe14eafabfda29425ce20e77859bf22faf125eb0077aa1feff60",
+          "bytes": 15670,
+          "line_ranges": [
+            [
+              163,
+              188
+            ],
+            [
+              221,
+              254
+            ],
+            [
+              293,
+              359
+            ]
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C33",
+      "url": "https://bbs.kanxue.com/thread-291745.htm",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "architecture_check",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "公开文明确为脱敏防守评测与有限动态观察，并列后续gate；不是攻击成功或保护强度保证。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://bbs.kanxue.com/thread-291745.htm",
+          "sha256": "945de10e944495210255c67c9568c43d478272b50a7c3b0a2a139a6cf08263f4",
+          "bytes": 26051,
+          "line_ranges": [
+            [
+              70,
+              86
+            ],
+            [
+              110,
+              122
+            ],
+            [
+              251,
+              288
+            ]
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C34",
+      "url": "https://www.52pojie.cn/thread-1900845-1-1.html",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "author_claim_lead",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "正文日期2024-03-14及WASM实例化、密码库调用支持前端逻辑可观察线索；不是商业许可证案例。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://www.52pojie.cn/thread-1900845-1-1.html",
+          "sha256": "dab330511619287de7624068c3e6485536c315111ce29a2df87828e3a7f476e2",
+          "bytes": 20096,
+          "line_ranges": [
+            [
+              170,
+              176
+            ],
+            [
+              295,
+              310
+            ],
+            [
+              495,
+              530
+            ]
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C35",
+      "url": "https://github.com/ReiDoBrega/Monalisa",
+      "review_status": "source_body_reviewed",
+      "date_status": "not_stated_in_reviewed_material",
+      "mapping_role": "none",
+      "result": "excluded",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "README主密钥属于工具的自有设备文件格式，不能归因目标DRM；继续排除具体目标失效映射。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://github.com/ReiDoBrega/Monalisa",
+          "sha256": "3f3ca3986da2bacf76c83a63f43ce199c1868fbc17adc43a823c603317849365",
+          "bytes": 12261,
+          "line_ranges": [
+            [
+              252,
+              258
+            ],
+            [
+              455,
+              501
+            ]
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C36",
+      "url": "https://www.ofweek.com/security/2026-10/ART-510009-8110-30706983.html",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "none",
+      "result": "excluded",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "文章明确公开信息整理，缺原始目标与修改证据；继续排除成功率、成本和绝对强弱结论。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://www.ofweek.com/security/2026-10/ART-510009-8110-30706983.html",
+          "sha256": "09e14fc4d6b228cbebae58fa3afb57ac423e3ac0d963845d6697f25235d36ef8",
+          "bytes": 12300,
+          "line_ranges": [
+            [
+              176,
+              192
+            ],
+            [
+              222,
+              238
+            ]
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C37",
+      "url": "https://www.cnblogs.com/DirWang/p/21917088",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "author_claim_lead",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "正文确有SDK标记、IAT和本地许可分析；但静态IAT为空或能反编译不能单独证明未加保护，该结论只记为作者主张。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://www.cnblogs.com/DirWang/p/21917088",
+          "sha256": "b26ed041d388e06df5e98358ec2af53df310768acb24a803a825f373bf44ebe0",
+          "bytes": 27293,
+          "line_ranges": [
+            [
+              62,
+              62
+            ],
+            [
+              151,
+              159
+            ],
+            [
+              654,
+              680
+            ],
+            [
+              1115,
+              1116
+            ]
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C38",
+      "url": "https://www.cnblogs.com/itcq1024/p/19097942",
+      "review_status": "partial_body_reviewed",
+      "date_status": "unresolved_original_date",
+      "mapping_role": "author_claim_lead",
+      "result": "limited_evidence",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "博客第58行注明52pojie原帖；2025-09-18只是转载页时间，原帖在线读取受限，原始发表日期改为未核实。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://www.cnblogs.com/itcq1024/p/19097942",
+          "sha256": "193818586bbd13f58ecfc26c85c8613f06b45f8355d769e9c064574c8dc59aba",
+          "bytes": 3789,
+          "line_ranges": [
+            [
+              54,
+              58
+            ],
+            [
+              110,
+              150
+            ],
+            [
+              177,
+              177
+            ]
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C39",
+      "url": "https://www.cnblogs.com/bodong/p/18475132",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "author_claim_lead",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "短正文给出去混淆和许可返回值修改说明；原文自己未研究去混淆必要性的原因，不能推广为所有版本必需。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://www.cnblogs.com/bodong/p/18475132",
+          "sha256": "aed4d2b50547d37455e42412a1c40099a409fb4c348e01e1a9942fc6c5d61eca",
+          "bytes": 3669,
+          "line_ranges": [
+            [
+              57,
+              86
+            ],
+            [
+              128,
+              128
+            ]
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C40",
+      "url": "https://blog.csdn.net/applebomb/article/details/154849846",
+      "review_status": "source_body_reviewed",
+      "date_status": "unresolved_original_date",
+      "mapping_role": "author_claim_lead",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "本地正文只显示最新推荐文章时间；首发日期改为未核实。描述支持自管Tomcat/Java Agent修改本地输出，不证明远程厂商后端失陷。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://blog.csdn.net/applebomb/article/details/154849846",
+          "sha256": "9a18e24ee55f0e1c5ff153e8d6d0e9d08cde8ba52e12dcb68afb5b305c2b6e6e",
+          "bytes": 25527,
+          "line_ranges": [
+            [
+              8,
+              30
+            ],
+            [
+              55,
+              91
+            ],
+            [
+              158,
+              176
+            ]
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C41",
+      "url": "https://overkazaf.github.io/blogs/posts/ponce4ghidra-symbolic-execution-crackme/",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "illustrative",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "正文明确两个crackme样例及SMT约束，日期2026-10-03；教学求解耗时不外推商业产品。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://overkazaf.github.io/blogs/posts/ponce4ghidra-symbolic-execution-crackme/",
+          "sha256": "1d5fbe6093fb29126c4795d159a57a348dc177b4883771360dd53142dafc2f3c",
+          "bytes": 47031,
+          "line_ranges": [
+            [
+              18,
+              18
+            ],
+            [
+              68,
+              93
+            ],
+            [
+              369,
+              380
+            ]
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C42",
+      "url": "https://www.52pojie.cn/forum.php?mod=viewthread&tid=2097675",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "author_claim_lead",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "正文实际按本地时分及前后时间窗判断四位码，没有机器码参与；修正摘要并增加F08维度。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://www.52pojie.cn/forum.php?mod=viewthread&tid=2097675",
+          "sha256": "dadb0d31e22ee1f7b5df6e2dee3ee9e7b9d69c621ef77f74b839ef0b280c43a4",
+          "bytes": 22449,
+          "line_ranges": [
+            [
+              168,
+              170
+            ],
+            [
+              230,
+              325
+            ]
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C43",
+      "url": "https://bbs.kanxue.com/thread-285790.htm",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "illustrative",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "原文LinkerDemo及映射/加载器视图代码支持教学完整性线索；不采用其把AES泛称校验算法的说法。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://bbs.kanxue.com/thread-285790.htm",
+          "sha256": "73654aba8a30804bdf8a327760d1c2d888e073a34d03eaed918607758b2a77bc",
+          "bytes": 65211,
+          "line_ranges": [
+            [
+              70,
+              97
+            ],
+            [
+              102,
+              123
+            ],
+            [
+              545,
+              575
+            ]
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C44",
+      "url": "https://habr.com/en/companies/datasapience/articles/938416/",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "author_claim_lead",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "正文transform调用和四类patch支持运行时改写线索；代码已匿名化，不能推出RSA数学破解或对任意Java产品有效。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://habr.com/en/companies/datasapience/articles/938416/",
+          "sha256": "c8989e84aa3a459f81fe4df9563d4e7617b7fad391c96b0c44fb1cbd17fd60e4",
+          "bytes": 74028,
+          "line_ranges": [
+            [
+              26,
+              26
+            ],
+            [
+              443,
+              443
+            ],
+            [
+              679,
+              711
+            ],
+            [
+              712,
+              757
+            ]
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C45",
+      "url": "https://www.52pojie.cn/thread-2002714-1-6.html",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "author_claim_lead",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "求助原帖与最佳答案区分清楚，短答讨论重启检查未经过原断点；仍缺完整执行轨迹。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://www.52pojie.cn/thread-2002714-1-6.html",
+          "sha256": "5a0eb44adb1b29925b68be348a719f70a99632332929df827458ee184bf4d89a",
+          "bytes": 6177,
+          "line_ranges": [
+            [
+              166,
+              197
+            ],
+            [
+              250,
+              270
+            ]
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C46",
+      "url": "https://www.52pojie.cn/forum.php?mod=viewthread&tid=2129460",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "author_claim_lead",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "正文只用响应分类推定授权码有效，未完成业务证明；十位数字本身不能推导实际熵或可枚举成功率。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://www.52pojie.cn/forum.php?mod=viewthread&tid=2129460",
+          "sha256": "2d4cb94a3175c3fc0a34111d7dc3317abb643781191238cf9472dd39477b8297",
+          "bytes": 9401,
+          "line_ranges": [
+            [
+              168,
+              208
+            ],
+            [
+              234,
+              274
+            ]
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C47",
+      "url": "https://www.cnblogs.com/DirWang/p/22496802",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "architecture_check",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "报告明确区分客户端签名私钥和服务器签名公钥，却又声称可伪造任意SignedDto；该泛化存在信任方向问题，不能当作已证实许可伪造。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://www.cnblogs.com/DirWang/p/22496802",
+          "sha256": "71ce76df7e7edb607dbcb1a7ffb87e0f2200926fbabe70766964a02dbb1ff246",
+          "bytes": 70596,
+          "line_ranges": [
+            [
+              62,
+              62
+            ],
+            [
+              130,
+              130
+            ],
+            [
+              1483,
+              1525
+            ]
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C48",
+      "url": "https://bbs.kanxue.com/thread-289794.htm",
+      "review_status": "partial_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "author_claim_lead",
+      "result": "limited_evidence",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "可见正文只含前两层且有作者自述限制；APK读重定向还被注明不是freeRASP此处实际使用的路径，不能将通用设想全归于该产品。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://bbs.kanxue.com/thread-289794.htm",
+          "sha256": "de8b251710342836c51652e11927f3a5d24d5a75de15c601581419b0d96c4cb1",
+          "bytes": 24059,
+          "line_ranges": [
+            [
+              70,
+              132
+            ]
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C49",
+      "url": "https://bbs.kanxue.com/thread-291541.htm",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "none",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "正文展示客户端/GMS调用与证明数据，未证明伪造通过后端的有效token；保持架构研究、无失效模式映射。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://bbs.kanxue.com/thread-291541.htm",
+          "sha256": "c954bbc91d94cbff23dbea80bbbe2953a530fae7a76d4d38f9f2741edd2deb0d",
+          "bytes": 45157,
+          "line_ranges": [
+            [
+              70,
+              100
+            ],
+            [
+              137,
+              150
+            ],
+            [
+              280,
+              300
+            ]
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C50",
+      "url": "https://www.52pojie.cn/thread-2040610-1-1.html",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "author_claim_lead",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "正文明确需要另一VIP后台并描述服务替换；不能据此认定官方服务被攻破，也不采用加密返回即可解决问题的评论。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://www.52pojie.cn/thread-2040610-1-1.html",
+          "sha256": "c2630acb6f8a5254ef7b93d65ef1396e639d7b4d27ca1c40860e384a2e8238fc",
+          "bytes": 16805,
+          "line_ranges": [
+            [
+              168,
+              182
+            ],
+            [
+              420,
+              470
+            ]
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C51",
+      "url": "https://nac-l.github.io/2025/01/25/lifting_0.html",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "illustrative",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "原站确认2025-01-25和小函数lifting语境；改用原站URL，保留论坛转载链接及2025-09-25，实验范围不推广整个产品。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://rstforums.com/forum/topic/123934-lifting-binaries-part-0-devirtualizing-vmprotect-and-themida-its-just-flattening/",
+          "sha256": "0d7ca634e8be7b4b7146b1adf72d69585207c2e0a0c42048d0b567848b40e758",
+          "bytes": 40119,
+          "line_ranges": [
+            [
+              107,
+              131
+            ],
+            [
+              159,
+              159
+            ],
+            [
+              516,
+              537
+            ],
+            [
+              1028,
+              1034
+            ]
+          ]
+        },
+        {
+          "kind": "public_page_read",
+          "url": "https://nac-l.github.io/2025/01/25/lifting_0.html",
+          "sections": [
+            "25 January 2025",
+            "研究方法与范围"
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C52",
+      "url": "https://github.com/f0829/VMProtect-devirtualization/blob/main/README.md",
+      "review_status": "source_body_reviewed",
+      "date_status": "not_stated_in_reviewed_material",
+      "mapping_role": "illustrative",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "README限定纯函数、有限路径、单基本块及实验性多块结果；无明确首发日期，不视为近期商业破解。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://github.com/f0829/VMProtect-devirtualization/blob/main/README.md",
+          "sha256": "d0f9f097df5307a9028f1e374390d093ffe3e8c41794972cd9cb3c850ffdaada",
+          "bytes": 23495,
+          "line_ranges": [
+            [
+              189,
+              224
+            ]
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C53",
+      "url": "https://vxcall.github.io/posts/defeating-a-heavily-obfuscated-binary/",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "illustrative",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "正文区分2024-06-10首发和2024-10-30更新；教学keygenme及特定变异UPX不代表通用保护强度。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://vxcall.github.io/posts/defeating-a-heavily-obfuscated-binary/",
+          "sha256": "6c42cee7f5314eae90c8e604047ba822e7cb695442fa56a5d2136da96bc6484c",
+          "bytes": 21875,
+          "line_ranges": [
+            [
+              12,
+              12
+            ],
+            [
+              26,
+              46
+            ],
+            [
+              387,
+              400
+            ]
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C54",
+      "url": "https://github.com/yaelahrip/Android-License-SSL-Pinning-Bypass",
+      "review_status": "source_body_reviewed",
+      "date_status": "not_stated_in_reviewed_material",
+      "mapping_role": "illustrative",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "README将LVL说明与Pairip类路径混用，且未验证示例实现；只保留客户端结果可改的教学线索，不能据此说明平台真实实现。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://github.com/yaelahrip/Android-License-SSL-Pinning-Bypass",
+          "sha256": "6443f9c5e5103af4425e1f75cdaa93eadde5d7311392ca6a8e799f64577b2340",
+          "bytes": 9949,
+          "line_ranges": [
+            [
+              215,
+              241
+            ],
+            [
+              269,
+              293
+            ]
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C55",
+      "url": "https://github.com/19h/chernobog",
+      "review_status": "source_body_reviewed",
+      "date_status": "not_stated_in_reviewed_material",
+      "mapping_role": "illustrative",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "README明示VM区域识别与验证不等于反虚拟化；工具能力清单不是实际目标破解结果。",
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "url": "https://github.com/19h/chernobog",
+          "sha256": "8039593ec3d7743922a4d932e424d0347106380a2bf7f297b3f5ada796ab4f3b",
+          "bytes": 63175,
+          "line_ranges": [
+            [
+              388,
+              417
+            ],
+            [
+              1600,
+              1615
+            ]
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    }
+  ]
+}
