@@ -89,7 +89,7 @@ git clone https://github.com/MuCheng2007/software-protection-skill.git
 
 项目级技能目录依据：[OpenAI 官方说明](https://developers.openai.com/blog/skills-agents-sdk)。通用格式：[Agent Skills 规范](https://agentskills.io/specification)。
 
-## 🧩 目前覆盖的 11 类失效模式
+## 🧩 目前覆盖的 12 类失效模式
 
 | ID | 常见失效点 | 要回答的防御问题 |
 | --- | --- | --- |
@@ -104,12 +104,13 @@ git clone https://github.com/MuCheng2007/software-protection-skill.git
 | F09 | 启动、导入或迁移直接信任缓存 | 恢复授权时是否重新验证？ |
 | F10 | 算法参数强度不合格 | 实际密钥、参数和签名方案是否合理？ |
 | F11 | 宏/脚本授权模块被删除 | 删除授权调用后，业务是否仍独立可用？ |
+| F12 | 混淆或虚拟化后的语义被恢复 | 保护是否真的应用于最终包，核心能力是否仍完整下发？ |
 
-完整规则与测试：[failure-patterns.md](skills/software-protection/references/failure-patterns.md)。F08 是工程回归维度，当前案例不足以证明其流行程度。
+完整规则与测试：[failure-patterns.md](skills/software-protection/references/failure-patterns.md)。F08 新增短帖线索仍不足以证明流行程度；F12 的工具或教学研究不证明任意商业产品可被完整还原。
 
 ## 📚 案例与证据
 
-首版记录 **20 条候选资料、11 类失效模式**。候选包含实践主张、教学样例、历史补充和排除记录，**不等于 20 款已确认破解的软件**。来源包括看雪、飘云阁与吾爱汇编；吾爱破解原站仍有覆盖缺口。
+目前记录 **53 条候选资料、12 类失效模式**。候选包含实践主张、教学样例、历史补充和排除记录，**不等于 53 款已确认破解的软件**。来源包括看雪、飘云阁、吾爱破解、Habr、GitHub与个人研究文章。新增材料采用局部正文抽查，未逐条在线重读，论坛覆盖仍不完整。
 
 案例按原始发表日期与读取范围记录，保留来源、前置条件和局限。当前没有第三方样本的独立复现，不将作者声称成功写成已验证事实，也不据此断言产品当前版本仍存在缺陷。
 

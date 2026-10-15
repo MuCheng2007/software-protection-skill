@@ -94,7 +94,7 @@ and verify the behavior. Respond in English.
 
 Skill directory reference: [OpenAI documentation](https://developers.openai.com/blog/skills-agents-sdk). Format: [Agent Skills specification](https://agentskills.io/specification).
 
-## 🧩 Eleven failure patterns currently covered
+## 🧩 Twelve failure patterns currently covered
 
 | ID | Failure area | Defensive question |
 | --- | --- | --- |
@@ -109,12 +109,13 @@ Skill directory reference: [OpenAI documentation](https://developers.openai.com/
 | F09 | Startup, import, or migration trusting cached state | Is restored licensing state verified again? |
 | F10 | Inadequate cryptographic parameters | Are the actual keys, parameters, and signature scheme suitable? |
 | F11 | Removable macro or script licensing modules | Does the business functionality still work after licensing calls are removed? |
+| F12 | Semantics recovered through obfuscation or virtualization | Is protection applied to the final build, and is the valuable capability still fully shipped? |
 
-See [failure-patterns.md](skills/software-protection/references/failure-patterns.md) for rules and tests. F08 is an engineering regression category; current cases do not establish its prevalence.
+See [failure-patterns.md](skills/software-protection/references/failure-patterns.md) for rules and tests. F08 remains an engineering regression category with limited source claims, not prevalence evidence. F12 research does not establish complete recovery of arbitrary protected products.
 
 ## 📚 Cases and evidence
 
-The initial collection contains **20 candidate source records and 11 failure patterns**. Records include practical claims, educational examples, historical context, and exclusions. **This does not mean 20 independently confirmed cracked products.** Sources include Kanxue, ChinaPYG, and a 52pojie compilation; direct coverage of 52pojie remains incomplete.
+The collection now contains **53 candidate source records and 12 failure patterns**. Records include practical claims, educational examples, historical context, and exclusions. **This does not mean 53 independently confirmed cracked products.** Sources include Kanxue, ChinaPYG, 52pojie, Habr, GitHub, and individual research posts. New material received local-text spot checks, not a complete online review; source coverage remains incomplete.
 
 Records preserve original publication dates, the extent of material read, sources, prerequisites, and limitations. No third-party samples have been independently reproduced. Authors' success claims are not presented as verified results or evidence that current product versions remain vulnerable.
 

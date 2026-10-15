@@ -51,4 +51,6 @@ description: 分析程序中需要重点保护的代码、密钥、资源和接�
 
 ## 根据公开案例维护技能
 
-用户要求调研或从案例改进时，使用 [references/research-method.md](references/research-method.md) 记录范围、来源、日期、证据等级与访问缺口。可核对的首轮摘要保存在 [references/forum-cases.json](references/forum-cases.json)。它是有限样本，不是漏洞库或当前产品状态证明；不默认加载整个案例集，不把历史漏洞或作者主张当作已复现事实。
+用户要求调研或从案例改进时，使用 [references/research-method.md](references/research-method.md) 记录范围、来源、日期、证据等级与访问缺口。分批资料保存在 [references/forum-cases.json](references/forum-cases.json)。它是有限样本，不是漏洞库或当前产品状态证明；不默认加载整个案例集，不把历史漏洞或作者主张当作已复现事实。
+
+按需核对记录的review_status：sampled_local_body表示对照保存的正文抽查，summary_review_only只表示审阅摘要与分类，两者都不是运行复现。区分工具能力、教学样例、架构分析与真实目标实践。重复来源沿用原ID；转载日期与原始发表日期分开。不要把存储容器大小当密钥位数、把工具示例密钥归到目标产品，或从客户端调用链可改推断服务端可信证明失效。

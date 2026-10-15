@@ -66,8 +66,7 @@ def validate(root: Path) -> dict:
     pattern_text = (skill / 'references/failure-patterns.md').read_text(encoding='utf-8')
     patterns = set(re.findall(r'^## (F\d{2}) ', pattern_text, re.M))
     check(set(re.findall(r'\bC\d{2}\b', pattern_text)) <= set(ids), 'Unknown case referenced in patterns')
-    allowed_hosts = {'bbs.kanxue.com', 'www.chinapyg.com', 'chinapyg.com', 'www.52hb.com',
-                     'www.52pojie.cn', '52pojie.cn'}
+    allowed_hosts = {'www.chinapyg.com', 'www.ofweek.com', 'blog.csdn.net', 'dmitrybrant.com', 'www.cnblogs.com', 'github.com', 'rstforums.com', 'overkazaf.github.io', 'vxcall.github.io', 'www.52hb.com', 'www.52pojie.cn', 'bbs.kanxue.com', 'habr.com'}
     for c in cases:
         cid = c['id']
         for field in ['site', 'title', 'url', 'retrieved_at', 'case_type', 'access',
@@ -98,6 +97,41 @@ def validate(root: Path) -> dict:
           'README counts do not match evidence')
     index = (root / 'docs/cases.md').read_text(encoding='utf-8')
     check(set(re.findall(r'^\| (C\d+) \|', index, re.M)) == set(ids), 'Case index out of sync')
+    supplement = payload.get('supplemental_import')
+    if supplement:
+        audit_file = root / 'docs/research/supplement-2026-10-15.json'
+        check(audit_file.is_file(), 'Supplement audit missing')
+        if audit_file.is_file():
+            audit = json.loads(audit_file.read_text(encoding='utf-8'))
+            records = audit['records']
+            check(len(records) == supplement['input_records'], 'Supplement input count mismatch')
+            input_ids = [r['input_id'] for r in records]
+            check(len(input_ids) == len(set(input_ids)), 'Duplicate supplement input ID')
+            aliases = supplement['merged_duplicates']
+            new_ids = set(input_ids) - set(aliases)
+            check(len(new_ids) == supplement['new_records'], 'Supplement new count mismatch')
+            check(new_ids <= set(ids), 'Supplement case missing')
+            check(set(aliases.values()) <= set(ids), 'Supplement duplicate target missing')
+            sampled = set()
+            for record in records:
+                check(record['canonical_id'] == aliases.get(record['input_id'], record['input_id']),
+                      'Supplement canonical ID mismatch')
+                check(re.fullmatch(r'[0-9a-f]{64}', record['source_sha256']) is not None,
+                      'Invalid source snapshot digest')
+                check(record['source_bytes'] > 0, 'Empty source snapshot')
+                check(record['review_status'] in {'sampled_local_body', 'summary_review_only'},
+                      'Invalid supplement review status')
+                if record['review_status'] == 'sampled_local_body':
+                    sampled.add(record['input_id'])
+            check(sampled == set(supplement['sampled_local_body']), 'Sample review scope mismatch')
+            by_id = {c['id']: c for c in cases}
+            for record in records:
+                if record['input_id'] in new_ids:
+                    check(by_id.get(record['input_id'], {}).get('review_status') == record['review_status'],
+                          'Case review status differs from audit')
+        english = (root / 'README.en.md').read_text(encoding='utf-8')
+        check(f'**{len(cases)} candidate source records and {len(patterns)} failure patterns**' in english,
+              'English README counts do not match evidence')
     svg = ET.fromstring((root / 'assets/hero.svg').read_text(encoding='utf-8'))
     check(svg.tag.endswith('svg'), 'Hero is not SVG')
     for el in svg.iter():

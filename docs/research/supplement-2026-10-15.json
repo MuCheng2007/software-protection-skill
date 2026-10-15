@@ -1,0 +1,287 @@
+{
+  "reviewed_at": "2026-10-15",
+  "input_sha256": "e3f3cc8efb2ae150f42849425ef77576c97aa0212e5d754b1e99c2efa02524d9",
+  "raw_posts_published": false,
+  "records": [
+    {
+      "input_id": "C21",
+      "canonical_id": "C21",
+      "url": "https://bbs.kanxue.com/thread-290636-1.htm",
+      "source_sha256": "d1de6178381fc7f13be09e9a8e59dc9a0e9afcc5a05c630beedba11702bb0e16",
+      "source_bytes": 45432,
+      "review_status": "sampled_local_body"
+    },
+    {
+      "input_id": "C22",
+      "canonical_id": "C02",
+      "url": "https://bbs.kanxue.com/thread-292131.htm",
+      "source_sha256": "46a6db94d8a12a2c3a5386143bdfc205783a80639fb641c40f2d745eab5d53db",
+      "source_bytes": 10241,
+      "review_status": "summary_review_only"
+    },
+    {
+      "input_id": "C23",
+      "canonical_id": "C23",
+      "url": "https://bbs.kanxue.com/thread-293074.htm",
+      "source_sha256": "8bd81d00385ecbe02ec2ca1aed361c0fa15e7f60f654cb47fc88dd25da547959",
+      "source_bytes": 35819,
+      "review_status": "summary_review_only"
+    },
+    {
+      "input_id": "C24",
+      "canonical_id": "C24",
+      "url": "https://www.52pojie.cn/thread-2129372-1-1.html",
+      "source_sha256": "4493fb88d0d51d760c22e025921c226d4d1090cba7d6a84f4cf0d73447baee75",
+      "source_bytes": 17476,
+      "review_status": "sampled_local_body"
+    },
+    {
+      "input_id": "C25",
+      "canonical_id": "C25",
+      "url": "https://www.52pojie.cn/thread-1952584-1-3.html",
+      "source_sha256": "84d76f12d8dc55243eae8bc5237765a0ca159889ce9c2b71a243fe7d70a490aa",
+      "source_bytes": 11533,
+      "review_status": "summary_review_only"
+    },
+    {
+      "input_id": "C26",
+      "canonical_id": "C26",
+      "url": "https://bbs.kanxue.com/thread-292938.htm",
+      "source_sha256": "de909c3483e73c634966a1c07426574025991a30be92a7ede53db2a3992c5cc6",
+      "source_bytes": 232217,
+      "review_status": "summary_review_only"
+    },
+    {
+      "input_id": "C27",
+      "canonical_id": "C27",
+      "url": "https://www.52pojie.cn/thread-2048656-1-5.html",
+      "source_sha256": "4e83d474a76760809117c804115d92a47aa71af5d7c44842f1823753a702cdc8",
+      "source_bytes": 7336,
+      "review_status": "sampled_local_body"
+    },
+    {
+      "input_id": "C28",
+      "canonical_id": "C28",
+      "url": "https://habr.com/ru/articles/964386/",
+      "source_sha256": "5cb7956476c46291e49e80a64f011354fde57a973cb4a7314edc177c3bd32281",
+      "source_bytes": 92862,
+      "review_status": "summary_review_only"
+    },
+    {
+      "input_id": "C29",
+      "canonical_id": "C29",
+      "url": "https://dmitrybrant.com/2026/02/01/defeating-a-40-year-old-copy-protection-dongle",
+      "source_sha256": "0c13f9e609ae5553287bb4c2f32881d4d833a7392fd098ee26375a2187751c66",
+      "source_bytes": 11516,
+      "review_status": "summary_review_only"
+    },
+    {
+      "input_id": "C30",
+      "canonical_id": "C30",
+      "url": "https://habr.com/en/articles/1008824/",
+      "source_sha256": "4b3b82394dc0cb955fcfa3b8d960e7986c1f2fe6f28692891ab7269233e77b43",
+      "source_bytes": 43213,
+      "review_status": "summary_review_only"
+    },
+    {
+      "input_id": "C31",
+      "canonical_id": "C31",
+      "url": "https://www.52pojie.cn/thread-2110293-1-1.html",
+      "source_sha256": "b3a4230ec0f2fe14eafabfda29425ce20e77859bf22faf125eb0077aa1feff60",
+      "source_bytes": 15670,
+      "review_status": "summary_review_only"
+    },
+    {
+      "input_id": "C32",
+      "canonical_id": "C03",
+      "url": "https://bbs.kanxue.com/thread-292945.htm",
+      "source_sha256": "b5402a648c32de4153ae0d24fd5b5b2c4cc4d9d52ab4e7ba88298cffbdc5f8c8",
+      "source_bytes": 16885,
+      "review_status": "summary_review_only"
+    },
+    {
+      "input_id": "C33",
+      "canonical_id": "C33",
+      "url": "https://bbs.kanxue.com/thread-291745.htm",
+      "source_sha256": "945de10e944495210255c67c9568c43d478272b50a7c3b0a2a139a6cf08263f4",
+      "source_bytes": 26051,
+      "review_status": "summary_review_only"
+    },
+    {
+      "input_id": "C34",
+      "canonical_id": "C34",
+      "url": "https://www.52pojie.cn/thread-1900845-1-1.html",
+      "source_sha256": "dab330511619287de7624068c3e6485536c315111ce29a2df87828e3a7f476e2",
+      "source_bytes": 20096,
+      "review_status": "summary_review_only"
+    },
+    {
+      "input_id": "C35",
+      "canonical_id": "C35",
+      "url": "https://github.com/ReiDoBrega/Monalisa",
+      "source_sha256": "3f3ca3986da2bacf76c83a63f43ce199c1868fbc17adc43a823c603317849365",
+      "source_bytes": 12261,
+      "review_status": "sampled_local_body"
+    },
+    {
+      "input_id": "C36",
+      "canonical_id": "C36",
+      "url": "https://www.ofweek.com/security/2026-10/ART-510009-8110-30706983.html",
+      "source_sha256": "09e14fc4d6b228cbebae58fa3afb57ac423e3ac0d963845d6697f25235d36ef8",
+      "source_bytes": 12300,
+      "review_status": "summary_review_only"
+    },
+    {
+      "input_id": "C37",
+      "canonical_id": "C37",
+      "url": "https://www.cnblogs.com/DirWang/p/21917088",
+      "source_sha256": "b26ed041d388e06df5e98358ec2af53df310768acb24a803a825f373bf44ebe0",
+      "source_bytes": 27293,
+      "review_status": "summary_review_only"
+    },
+    {
+      "input_id": "C38",
+      "canonical_id": "C38",
+      "url": "https://www.cnblogs.com/itcq1024/p/19097942",
+      "source_sha256": "193818586bbd13f58ecfc26c85c8613f06b45f8355d769e9c064574c8dc59aba",
+      "source_bytes": 3789,
+      "review_status": "summary_review_only"
+    },
+    {
+      "input_id": "C39",
+      "canonical_id": "C39",
+      "url": "https://www.cnblogs.com/bodong/p/18475132",
+      "source_sha256": "aed4d2b50547d37455e42412a1c40099a409fb4c348e01e1a9942fc6c5d61eca",
+      "source_bytes": 3669,
+      "review_status": "summary_review_only"
+    },
+    {
+      "input_id": "C40",
+      "canonical_id": "C40",
+      "url": "https://blog.csdn.net/applebomb/article/details/154849846",
+      "source_sha256": "9a18e24ee55f0e1c5ff153e8d6d0e9d08cde8ba52e12dcb68afb5b305c2b6e6e",
+      "source_bytes": 25527,
+      "review_status": "summary_review_only"
+    },
+    {
+      "input_id": "C41",
+      "canonical_id": "C41",
+      "url": "https://overkazaf.github.io/blogs/posts/ponce4ghidra-symbolic-execution-crackme/",
+      "source_sha256": "1d5fbe6093fb29126c4795d159a57a348dc177b4883771360dd53142dafc2f3c",
+      "source_bytes": 47031,
+      "review_status": "sampled_local_body"
+    },
+    {
+      "input_id": "C42",
+      "canonical_id": "C42",
+      "url": "https://www.52pojie.cn/forum.php?mod=viewthread&tid=2097675",
+      "source_sha256": "dadb0d31e22ee1f7b5df6e2dee3ee9e7b9d69c621ef77f74b839ef0b280c43a4",
+      "source_bytes": 22449,
+      "review_status": "summary_review_only"
+    },
+    {
+      "input_id": "C43",
+      "canonical_id": "C43",
+      "url": "https://bbs.kanxue.com/thread-285790.htm",
+      "source_sha256": "73654aba8a30804bdf8a327760d1c2d888e073a34d03eaed918607758b2a77bc",
+      "source_bytes": 65211,
+      "review_status": "sampled_local_body"
+    },
+    {
+      "input_id": "C44",
+      "canonical_id": "C44",
+      "url": "https://habr.com/en/companies/datasapience/articles/938416/",
+      "source_sha256": "c8989e84aa3a459f81fe4df9563d4e7617b7fad391c96b0c44fb1cbd17fd60e4",
+      "source_bytes": 74028,
+      "review_status": "summary_review_only"
+    },
+    {
+      "input_id": "C45",
+      "canonical_id": "C45",
+      "url": "https://www.52pojie.cn/thread-2002714-1-6.html",
+      "source_sha256": "5a0eb44adb1b29925b68be348a719f70a99632332929df827458ee184bf4d89a",
+      "source_bytes": 6177,
+      "review_status": "summary_review_only"
+    },
+    {
+      "input_id": "C46",
+      "canonical_id": "C46",
+      "url": "https://www.52pojie.cn/forum.php?mod=viewthread&tid=2129460",
+      "source_sha256": "2d4cb94a3175c3fc0a34111d7dc3317abb643781191238cf9472dd39477b8297",
+      "source_bytes": 9401,
+      "review_status": "summary_review_only"
+    },
+    {
+      "input_id": "C47",
+      "canonical_id": "C47",
+      "url": "https://www.cnblogs.com/DirWang/p/22496802",
+      "source_sha256": "71ce76df7e7edb607dbcb1a7ffb87e0f2200926fbabe70766964a02dbb1ff246",
+      "source_bytes": 70596,
+      "review_status": "summary_review_only"
+    },
+    {
+      "input_id": "C48",
+      "canonical_id": "C48",
+      "url": "https://bbs.kanxue.com/thread-289794.htm",
+      "source_sha256": "de8b251710342836c51652e11927f3a5d24d5a75de15c601581419b0d96c4cb1",
+      "source_bytes": 24059,
+      "review_status": "summary_review_only"
+    },
+    {
+      "input_id": "C49",
+      "canonical_id": "C49",
+      "url": "https://bbs.kanxue.com/thread-291541.htm",
+      "source_sha256": "c954bbc91d94cbff23dbea80bbbe2953a530fae7a76d4d38f9f2741edd2deb0d",
+      "source_bytes": 45157,
+      "review_status": "summary_review_only"
+    },
+    {
+      "input_id": "C50",
+      "canonical_id": "C50",
+      "url": "https://www.52pojie.cn/thread-2040610-1-1.html",
+      "source_sha256": "c2630acb6f8a5254ef7b93d65ef1396e639d7b4d27ca1c40860e384a2e8238fc",
+      "source_bytes": 16805,
+      "review_status": "summary_review_only"
+    },
+    {
+      "input_id": "C51",
+      "canonical_id": "C51",
+      "url": "https://rstforums.com/forum/topic/123934-lifting-binaries-part-0-devirtualizing-vmprotect-and-themida-its-just-flattening/",
+      "source_sha256": "0d7ca634e8be7b4b7146b1adf72d69585207c2e0a0c42048d0b567848b40e758",
+      "source_bytes": 40119,
+      "review_status": "sampled_local_body"
+    },
+    {
+      "input_id": "C52",
+      "canonical_id": "C52",
+      "url": "https://github.com/f0829/VMProtect-devirtualization/blob/main/README.md",
+      "source_sha256": "d0f9f097df5307a9028f1e374390d093ffe3e8c41794972cd9cb3c850ffdaada",
+      "source_bytes": 23495,
+      "review_status": "summary_review_only"
+    },
+    {
+      "input_id": "C53",
+      "canonical_id": "C53",
+      "url": "https://vxcall.github.io/posts/defeating-a-heavily-obfuscated-binary/",
+      "source_sha256": "6c42cee7f5314eae90c8e604047ba822e7cb695442fa56a5d2136da96bc6484c",
+      "source_bytes": 21875,
+      "review_status": "summary_review_only"
+    },
+    {
+      "input_id": "C54",
+      "canonical_id": "C54",
+      "url": "https://github.com/yaelahrip/Android-License-SSL-Pinning-Bypass",
+      "source_sha256": "6443f9c5e5103af4425e1f75cdaa93eadde5d7311392ca6a8e799f64577b2340",
+      "source_bytes": 9949,
+      "review_status": "summary_review_only"
+    },
+    {
+      "input_id": "C55",
+      "canonical_id": "C55",
+      "url": "https://github.com/19h/chernobog",
+      "source_sha256": "8039593ec3d7743922a4d932e424d0347106380a2bf7f297b3f5ada796ab4f3b",
+      "source_bytes": 63175,
+      "review_status": "summary_review_only"
+    }
+  ]
+}
