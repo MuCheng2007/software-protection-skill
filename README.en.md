@@ -38,6 +38,8 @@ For independent developers and small teams adding licensing to their own softwar
 
 **Expected deliverables: protection priorities, an architecture recommendation, an integration plan, acceptance criteria, and remaining risks.** With source and runtime access, the assistant can help implement the plan. With design materials alone, it starts with a proposal.
 
+**If AI can help modify the entire client, what still controls the paid capability?** The skill challenges cloud-delivered constants and keys that can be extracted and reused, evaluates keeping algorithms or essential computation on the server, and specifies APIs, authorization state, revocation, quotas, and direct API tests. It also explains the limits of fully offline protection. See the [architecture review reference](skills/software-protection/references/hostile-client-design.md) (Chinese).
+
 An activation dialog, RSA signature, or executable packer alone does not explain what your software actually protects.
 
 This project turns public reports into a reusable Agent Skill connecting **failure conditions → defensive measures → acceptance tests → remaining risks**. Ask for a complete design, or let an assistant help implement and harden it when it has access to your project and tools.
