@@ -67,9 +67,11 @@ def validate(root: Path) -> dict:
     pattern_text = (skill / 'references/failure-patterns.md').read_text(encoding='utf-8')
     patterns = set(re.findall(r'^## (F\d{2}) ', pattern_text, re.M))
     check(set(re.findall(r'\bC\d{2}\b', pattern_text)) <= set(ids), 'Unknown case referenced in patterns')
-    allowed_hosts = {'bbs.kanxue.com', 'habr.com', 'nac-l.github.io', 'github.com', 'blog.csdn.net', 'overkazaf.github.io', 'dmitrybrant.com', 'www.52hb.com', 'www.52pojie.cn', 'www.chinapyg.com', 'www.ofweek.com', 'vxcall.github.io', 'www.cnblogs.com'}
+    allowed_hosts = {'bbs.kanxue.com', 'habr.com', 'nac-l.github.io', 'github.com', 'blog.csdn.net', 'overkazaf.github.io', 'dmitrybrant.com', 'www.52hb.com', 'www.52pojie.cn', 'www.chinapyg.com', 'www.ofweek.com', 'vxcall.github.io', 'www.cnblogs.com', 'juejin.cn'}
     for c in cases:
         cid = c['id']
+        check('verified' not in c, f'{cid}: ambiguous automatic verified flag')
+        check(c.get('patterns_status') != 'unverified-regex', f'{cid}: unreviewed automatic mapping')
         for field in ['site', 'title', 'url', 'retrieved_at', 'case_type', 'access',
                       'evidence_summary', 'limitations', 'patterns', 'independently_reproduced']:
             check(field in c, f'{cid}: missing {field}')
@@ -133,8 +135,9 @@ def validate(root: Path) -> dict:
         english = (root / 'README.en.md').read_text(encoding='utf-8')
         check(f'**{len(cases)} candidate source records and {len(patterns)} failure patterns**' in english,
               'English README counts do not match evidence')
-    full_review = payload.get('full_review')
-    if full_review:
+    reviews = ([payload['full_review']] if payload.get('full_review') else []) + payload.get('update_batches', [])
+    covered_ids = []
+    for full_review in reviews:
         review_path = root / full_review['report']
         check(review_path.resolve().is_relative_to(root), 'Review path escapes repository')
         check(review_path.is_file(), 'Full review report missing')
@@ -143,8 +146,9 @@ def validate(root: Path) -> dict:
             reviewed = review['records']
             review_ids = [r['id'] for r in reviewed]
             check(len(review_ids) == len(set(review_ids)), 'Duplicate full review ID')
-            check(set(review_ids) == set(ids), 'Full review does not cover case IDs exactly')
-            check(full_review['records'] == len(cases), 'Full review count mismatch')
+            check(set(review_ids) <= set(ids), 'Unknown case in review report')
+            covered_ids.extend(review_ids)
+            check(full_review['records'] == len(reviewed), 'Full review count mismatch')
             check(dict(Counter(r['review_status'] for r in reviewed)) == review['counts'],
                   'Full review scope counts mismatch')
             by_id = {c['id']: c for c in cases}
@@ -182,6 +186,9 @@ def validate(root: Path) -> dict:
                     else:
                         check(bool(evidence['sections']), 'Public-page locator missing')
             check(reproduced == review['runtime_reproductions'], 'Runtime reproduction count mismatch')
+    if reviews:
+        check(len(covered_ids) == len(set(covered_ids)), 'Case reviewed in multiple active batches')
+        check(set(covered_ids) == set(ids), 'Review batches do not cover case IDs exactly')
     svg = ET.fromstring((root / 'assets/hero.svg').read_text(encoding='utf-8'))
     check(svg.tag.endswith('svg'), 'Hero is not SVG')
     for el in svg.iter():

@@ -117,7 +117,11 @@ See [failure-patterns.md](skills/software-protection/references/failure-patterns
 
 ## 📚 Cases and evidence
 
-The collection now contains **53 candidate source records and 12 failure patterns**. Records include practical claims, educational examples, historical context, and exclusions. **This does not mean 53 independently confirmed cracked products.** Sources include Kanxue, ChinaPYG, 52pojie, Habr, GitHub, and individual research posts. Each record now has a review of its available source passages, date basis, classification, and pattern mapping. Partial access and unresolved dates remain explicit; this is not a complete online recrawl or runtime reproduction.
+The collection now contains **67 candidate source records and 12 failure patterns**.
+
+The supplied collection has 1,225 live candidate rows. Most remain pending source review and are not included in the 67 records above. Automated flags are not factual verification or runtime reproduction. See the [batch review](docs/research/update-review-2026-10-21.md) (Chinese).
+
+Records include practical claims, educational examples, historical context, and exclusions. **This does not mean 67 independently confirmed cracked products.** Sources include Kanxue, ChinaPYG, 52pojie, Habr, GitHub, and individual research posts. Each record now has a review of its available source passages, date basis, classification, and pattern mapping. Partial access and unresolved dates remain explicit; this is not a complete online recrawl or runtime reproduction.
 
 Records preserve original publication dates, the extent of material read, sources, prerequisites, and limitations. No third-party samples have been independently reproduced. Authors' success claims are not presented as verified results or evidence that current product versions remain vulnerable.
 

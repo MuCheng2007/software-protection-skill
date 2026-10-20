@@ -1,0 +1,588 @@
+{
+  "reviewed_at": "2026-10-21",
+  "scope": "14 new records checked against supplied text passages; 2 canonical duplicates retained; remaining automated candidates are metadata triage only, not merged as verified cases.",
+  "counts": {
+    "partial_body_reviewed": 7,
+    "source_body_reviewed": 7
+  },
+  "runtime_reproductions": 0,
+  "input_files": {
+    "cases-dataset.json": {
+      "sha256": "81843590b3ec4883569ddc758547471ee76f7ec8b14dfc1f87c7d1ee9529d69c",
+      "bytes": 2742389
+    },
+    "software-protection-cases.json": {
+      "sha256": "df6614260e7c5d69461ce0e9d3ab223753e4d29de1b20c9971b6aac7fbdfeebd",
+      "bytes": 1291879
+    },
+    "cases-manifest.json": {
+      "sha256": "7d6e55f27cfed09edc401bec9f04a5345b7edbcc9e78cac69481d0bca3a9621c",
+      "bytes": 7161
+    }
+  },
+  "actual": {
+    "raw_records": 2103,
+    "live_records": 1225,
+    "excluded_records": 878,
+    "categories": {
+      "software-protection-case": 673,
+      "adjacent-reverse-engineering": 177,
+      "unclear": 189,
+      "ctf-teaching": 175,
+      "tool-or-library": 11
+    },
+    "dispositions": {
+      "existing_source": 34,
+      "reviewed_new": 14,
+      "pending_source_review": 1177
+    }
+  },
+  "declared_manifest_totals": {
+    "raw_harvested": 2103,
+    "live_records": 1250,
+    "tier_a_cases": 689,
+    "tier_a_verified": 187,
+    "tier_a_deep_evidence": 65,
+    "adjacent": 185,
+    "excluded_archived": 853
+  },
+  "duplicate_manual_aliases": {
+    "C67": "C04",
+    "C68": "C08"
+  },
+  "online_access_gaps": [
+    "This batch uses supplied snapshots; original pages not refreshed, attachments and images not fetched."
+  ],
+  "records": [
+    {
+      "id": "C56",
+      "url": "https://blog.csdn.net/lg888/article/details/153173598",
+      "review_status": "partial_body_reviewed",
+      "date_status": "first_publication_unresolved",
+      "mapping_role": "none",
+      "result": "excluded_from_mechanism_evidence",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "可读部分以典型示例讲解本地分支修改；后续内容收费，无法据此确认该产品的完整实践结果。 首发日期未知；不能把推荐日期当发表日期。通用Qt/Win32示例不能当作目标实测指令；与C23同产品不证明转载关系。",
+      "independently_reproduced": false,
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "file": "fetched/blog.csdn.net_lg888_article_details_153173598.txt",
+          "sha256": "6d3eddaaf48955e45a76df822a691e5283810e4100153a15f67695e757165582",
+          "bytes": 20781,
+          "line_ranges": [
+            [
+              8,
+              14
+            ],
+            [
+              52,
+              150
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C57",
+      "url": "https://blog.csdn.net/weixin_44510171/article/details/149917319",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "illustrative",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "作者用客户自部署的Java系统演示移除授权拦截器，并讨论本地哈希、远程上报和JNI加固。 作者自测与教学说明，未独立运行。客户可控的后端仍在不可信侧；上报预期哈希不能证明实际执行代码，JNI不构成独立信任根。",
+      "independently_reproduced": false,
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "file": "fetched/blog.csdn.net_weixin_44510171_article_details_149917319.txt",
+          "sha256": "918f9c4700351ae3f7fcf29b0d6c519d6abff4eff26a87d53649abef368fa913",
+          "bytes": 11365,
+          "line_ranges": [
+            [
+              8,
+              12
+            ],
+            [
+              40,
+              82
+            ],
+            [
+              117,
+              169
+            ],
+            [
+              207,
+              247
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C58",
+      "url": "https://juejin.cn/post/7667150616481267721",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "none",
+      "result": "excluded_from_mechanism_evidence",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "授权SDK厂商介绍防重放、并发与客户端加固；不作为真实软件被破解或防护有效性的案例证据。 推广性设计文章；HMAC共享秘密在受控客户端可暴露。nonce示例先登记后验签且非原子，固定300秒TTL与允许未来300秒的时间窗不匹配；本文不认可其安全承诺。",
+      "independently_reproduced": false,
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "file": "fetched/juejin.cn_post_7667150616481267721.txt",
+          "sha256": "1f9b51d9f84f01a4366fa49627c885f5d555b4feb93659071a539b4050fed09c",
+          "bytes": 10682,
+          "line_ranges": [
+            [
+              42,
+              58
+            ],
+            [
+              76,
+              130
+            ],
+            [
+              158,
+              209
+            ],
+            [
+              228,
+              244
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C59",
+      "url": "https://blog.csdn.net/u014029795/article/details/149068914",
+      "review_status": "source_body_reviewed",
+      "date_status": "first_publication_unresolved",
+      "mapping_role": "illustrative",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "两个CrackMe练习通过客户端包含的生成规则构造输入，用于说明校验规则足以重建发卡能力。 教学样例，不是商业软件实践；多组输入可靠性未验证，未执行或复制注册机代码；推荐日期不是首发日期。",
+      "independently_reproduced": false,
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "file": "fetched/blog.csdn.net_u014029795_article_details_149068914.txt",
+          "sha256": "6cb6828c7d9da8471c97634a8b4354ae4a61b02995eaa16f5767a1434faa1a9d",
+          "bytes": 21686,
+          "line_ranges": [
+            [
+              8,
+              14
+            ],
+            [
+              38,
+              65
+            ],
+            [
+              67,
+              127
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C60",
+      "url": "https://www.cnblogs.com/hankerstudio/articles/18648033",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "author_claim_lead",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "作者报告修改本地机器标识和校验分支；同时记录静态修改与运行后修改的效果不同。 目标版本、哈希与服务器行为未确定；修改后无法启动不必然证明启动完整性校验，需排除补丁错误或其他前置条件。",
+      "independently_reproduced": false,
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "file": "fetched/www.cnblogs.com_hankerstudio_articles_18648033.txt",
+          "sha256": "23c1cad0cd33d0a13b123bbae339919c9e843bb434b6e6f071acdb02ccdc198b",
+          "bytes": 4167,
+          "line_ranges": [
+            [
+              1,
+              18
+            ],
+            [
+              38,
+              102
+            ],
+            [
+              106,
+              107
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C61",
+      "url": "https://www.cnblogs.com/chengcanghai/p/19058529",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "none",
+      "result": "reliability_evidence_only",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "作者从源码排查设备授权误拒：网卡筛选依赖联网/网关，且首张网卡随环境变化。 这是正版授权可用性故障，不是破解成功。原文任一MAC匹配、合并MAC或换硬件标识的建议需分别评估稳定性、可伪造性与恢复流程。",
+      "independently_reproduced": false,
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "file": "fetched/www.cnblogs.com_chengcanghai_p_19058529.txt",
+          "sha256": "ff11f9b9e62513add20e19312b82a7bd8aa19b75dd8338a660cc00257d4c923c",
+          "bytes": 5330,
+          "line_ranges": [
+            [
+              52,
+              80
+            ],
+            [
+              141,
+              172
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C62",
+      "url": "https://www.52pojie.cn/thread-2109773-1-1.html",
+      "review_status": "partial_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "author_claim_lead",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "作者称将客户端四个授权相关函数交给AI重建机器码到注册码规则，并报告一次生成结果正确。 仅核对用户提供的正文文本；算法在附件/截图中，未下载、未运行或验证。单次作者自述不能证明AI可靠性、所有版本或厂商全部产品均可被破解。",
+      "independently_reproduced": false,
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "file": "fetched/www.52pojie.cn_thread-2109773-1-1.html.txt",
+          "sha256": "bebc862006ec86d06fecb752d8547870a0386362955c2cafda7117227e249407",
+          "bytes": 11585,
+          "line_ranges": [
+            [
+              165,
+              218
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C63",
+      "url": "https://bbs.kanxue.com/thread-288796.htm",
+      "review_status": "partial_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "none",
+      "result": "excluded_from_mechanism_evidence",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "文章讨论用初始化常数或查表特征识别公开算法，不涉及具体授权绕过。 正文不完整；识别公开算法不等于取得密钥或破坏密码安全，常量匹配可能误判，算法也未必采用静态查表实现。",
+      "independently_reproduced": false,
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "file": "fetched/bbs.kanxue.com_thread-288796.htm.txt",
+          "sha256": "72a696f61f75b6165a5d615b84b871714d6134a76942995b3a2e7a74c0576b86",
+          "bytes": 14695,
+          "line_ranges": [
+            [
+              67,
+              123
+            ],
+            [
+              398,
+              408
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C64",
+      "url": "https://bbs.kanxue.com/thread-290710-1.htm",
+      "review_status": "partial_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "none",
+      "result": "excluded_from_mechanism_evidence",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "作者描述观察风控SDK加密前请求参数；返回解密和后续步骤隐藏。 账号注册风控与付费软件授权不同；观察客户端明文不证明伪造有效设备凭据或后端授权成功。不发布设备样例中的个人信息。",
+      "independently_reproduced": false,
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "file": "fetched/bbs.kanxue.com_thread-290710-1.htm.txt",
+          "sha256": "79c9fbd7d356b718db37d7263479d48f7d5a9be20189049d56bf468cdf3f03b4",
+          "bytes": 30690,
+          "line_ranges": [
+            [
+              67,
+              104
+            ],
+            [
+              192,
+              198
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C65",
+      "url": "https://bbs.kanxue.com/thread-291152.htm",
+      "review_status": "partial_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "architecture_check",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "作者提出通过执行轨迹、简化与差异定位分析虚拟化代码的思路，强调通用的是思路而非完整还原工具。 后续正文隐藏，自研工具未提供；没有具体产品端到端结果。不能据此宣称VMProtect/Themida存在一键通解或AI必然破解。",
+      "independently_reproduced": false,
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "file": "fetched/bbs.kanxue.com_thread-291152.htm.txt",
+          "sha256": "d18f2763409f2b9ae8ce143e59bd8475153c955a75618fd33969a564d8c5809e",
+          "bytes": 10514,
+          "line_ranges": [
+            [
+              67,
+              109
+            ],
+            [
+              135,
+              137
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C66",
+      "url": "https://bbs.kanxue.com/thread-290726.htm",
+      "review_status": "partial_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "architecture_check",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "作者以VMProtect 3.8.1的指令变形举例讨论特征匹配分析的困难与版本差异。 后文隐藏，含培训推广；源码泄漏与发布因果为作者推测，文中2023年初/年底叙述也不能证明其因果。无完整还原或抗分析测量。",
+      "independently_reproduced": false,
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "file": "fetched/bbs.kanxue.com_thread-290726.htm.txt",
+          "sha256": "4a226f336432b19ccf221349e5938a72191494e436f6eab91d9fb1bbf8453d88",
+          "bytes": 50413,
+          "line_ranges": [
+            [
+              67,
+              95
+            ],
+            [
+              168,
+              173
+            ],
+            [
+              390,
+              398
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C70",
+      "url": "https://www.52pojie.cn/thread-2107643-1-1.html",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "architecture_check",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "Sublime ARM64许可证分析记录首处修改后重启仍未注册，并继续研究解析流程；不能仅凭一个激活界面判断完整功能。 未见最终完整绕过结果，图片未逐张验证。新摘要漏掉后半篇的解析分析，已修正；不采纳其全部ABI与汇编解释，例如ADD计算地址而非解引用。",
+      "independently_reproduced": false,
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "file": "fetched/www.52pojie.cn_thread-2107643-1-1.html.txt",
+          "sha256": "ab435dff619bab519564057445c907c505ed8e58587e3bd97c5c59ef88c564de",
+          "bytes": 27586,
+          "line_ranges": [
+            [
+              165,
+              186
+            ],
+            [
+              248,
+              261
+            ],
+            [
+              380,
+              471
+            ],
+            [
+              615,
+              687
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C71",
+      "url": "https://bbs.kanxue.com/thread-286748.htm",
+      "review_status": "partial_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "author_claim_lead",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "作者报告替换云端配置文件与客户端授权平台配置；公开段落称自行创建软件位后使用其卡密。 仅抽象配置下发可替代的授权边界，不涉及作弊功能。作者字段解释有猜测、后续隐藏；不是攻破原服务器或伪造原租户卡密，SDK标记也不单独证明未加固。",
+      "independently_reproduced": false,
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "file": "fetched/bbs.kanxue.com_thread-286748.htm.txt",
+          "sha256": "1a0d758b0d3b883e63111b796215c6418555a09ef2cff326fcc4d4c5e325fb8a",
+          "bytes": 32535,
+          "line_ranges": [
+            [
+              67,
+              100
+            ],
+            [
+              118,
+              166
+            ],
+            [
+              177,
+              223
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "C72",
+      "url": "https://bbs.kanxue.com/thread-292050.htm",
+      "review_status": "source_body_reviewed",
+      "date_status": "source_date_checked",
+      "mapping_role": "author_claim_lead",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "主帖提出替换本地验签公钥；回复质疑9.4适用性，作者承认问题，另有回复提出运行时变换解释。 附件未下载或执行；讨论中的解释不等于已验证修复，不能保留标题覆盖9.0到9.4的成功承诺。不是RSA数学攻击或服务器签发私钥泄漏。",
+      "independently_reproduced": false,
+      "evidence": [
+        {
+          "kind": "provided_text_snapshot",
+          "file": "fetched/bbs.kanxue.com_thread-292050.htm.txt",
+          "sha256": "7f6920844f7f3a3e1214e5182eff1950e55774a3bd46350ff9ae452a758d0d20",
+          "bytes": 7782,
+          "line_ranges": [
+            [
+              67,
+              98
+            ],
+            [
+              306,
+              362
+            ],
+            [
+              402,
+              460
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}
