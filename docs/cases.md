@@ -1,10 +1,12 @@
 # 案例索引与证据等级
 
-67条是资料数量，不是确认破解软件数量。已逐条审阅可得正文的关键证据、日期、分类与模式映射；隐藏内容、日期未知及作者推测均保留局限。独立运行复现仍为0。
+76条是资料数量，不是确认破解软件数量。已逐条审阅可得正文的关键证据、日期、分类与模式映射；隐藏内容、日期未知及作者推测均保留局限。独立运行复现仍为0。
 
 [首批53条核验报告](research/full-review-2026-10-15.md) · [机器可读核验](research/full-review-2026-10-15.json)
 
 [本次14条审查与全量元数据检查](research/update-review-2026-10-21.md)。新增记录包含排除项、教程和架构线索，不能当作14款破解软件。原有53条的核验日期与结论保留，本次未重新在线核查。
+
+[剩余1177条快速筛查报告](research/remaining-1177-review-2026-10-21.md)：9条经追加正文审查后新增，1168条剔除；首发日期不明均保留未知。
 
 C22归并C02、C32归并C03，新增C67归并C04、C68归并C08；缺失ID不补号，原ID不重排。历史批次和本轮窗口分开，不把更新、转载或推荐时间当作原始发表日期。
 
@@ -81,3 +83,12 @@ author_demo/ctf_teaching为教学；author_report是来源作者实践主张；a
 | C70 | 2026-05-14 | [吾爱破解 · Sublime许可证 - ARM64架构-Parse_license详细分析(小白友好，内含前置知识/推理原理)](https://www.52pojie.cn/thread-2107643-1-1.html) | `architecture_review` | Sublime ARM64许可证分析记录首处修改后重启仍未注册，并继续研究解析流程；不能仅凭一个激活界面判断完整功能。 未见最终完整绕过结果，图片未逐张验证。新摘要漏掉后半篇的解析分析，已修正；不采纳其全部ABI与汇编解释，例如ADD计算地址而非解引用。 |
 | C71 | 2025-05-06 | [看雪 · 某端游外挂网络验证的分析与破解思路](https://bbs.kanxue.com/thread-286748.htm) | `author_report` | 作者报告替换云端配置文件与客户端授权平台配置；公开段落称自行创建软件位后使用其卡密。 仅抽象配置下发可替代的授权边界，不涉及作弊功能。作者字段解释有猜测、后续隐藏；不是攻破原服务器或伪造原租户卡密，SDK标记也不单独证明未加固。 |
 | C72 | 2026-07-17 | [看雪 ·  IDA Pro Keygen - 支持 9.0 ~ 9.4](https://bbs.kanxue.com/thread-292050.htm) | `author_report` | 主帖提出替换本地验签公钥；回复质疑9.4适用性，作者承认问题，另有回复提出运行时变换解释。 附件未下载或执行；讨论中的解释不等于已验证修复，不能保留标题覆盖9.0到9.4的成功承诺。不是RSA数学攻击或服务器签发私钥泄漏。 |
+| C73 | 未知 | [CSDN · Source Insight 4.0.118注册机制研究](https://blog.csdn.net/weixin_38526180/article/details/107974699) | `historical_author_report` | 作者将本地序列号、许可证验签与后续在线检查分开分析，报告替换客户端信任公钥并修改本地在线检查线程。 只支持文中4.0.118及作者所述路径；未独立运行。页面显示推荐日期而非可靠首发日期；不是破解RSA、泄漏原签发私钥或攻破服务器。 |
+| C74 | 未知 | [个人研究博客 · Denuvo Analysis：半在线授权与计算依赖常数](https://connorjaydunn.github.io/blog/posts/denuvo-analysis/) | `architecture_review` | 原作者说明半在线许可将部分计算材料与设备信息结合后缓存，运行时恢复用于真实指令；服务端内部处理被作者明确标为推测。 这是研究笔记而非厂商规范或完整破解记录；未证明所有版本。缓存材料最终在客户端使用，不等同于持续受云端控制的计算，也不保证完整客户端失陷后的不可复用性。首发日期未确定。 |
+| C75 | 未知 | [GitHub · RACEAC：校验文件与重新打开使用之间的竞态](https://github.com/ioncodes/RACEAC) | `historical_adjacent_tamper_report` | 作者报告资源完整性检查后业务重新打开文件，形成校验对象与使用内容之间的时间差。 反作弊相邻案例，仅抽象文件信任边界。README已注明其PoC不适用于文中所称当前版本；首次发布日期未确认，未运行PoC或验证当前产品。 |
+| C76 | 未知 | [GitHub · MogVMP：限定版本与函数复杂度的静态反虚拟化PoC](https://github.com/eversinc33/MogVMP) | `research_tool` | 维护者将工具限定为已脱壳的32位VMProtect 3.0至3.5目标，输出可读LLVM IR，并明确教学/CTF和PoC性质。 跳转表、外部调用、多VM和参数缓冲区存在限制或需人工处理；不以README宣称证明任意产品可还原，未安装运行，仓库创建时间不是研究发表日期。 |
+| C77 | 未知 | [GitHub · Tigress_protection：函数语义恢复与输出一致性实验](https://github.com/JonathanSalwan/Tigress_protection) | `research_demo` | 研究者给出Tigress挑战及受控哈希函数的语义简化实验，使用随机输入比较原程序与重建输出。 受控研究基准，不是920款商业软件；样本成功数和性能为作者报告，本项目未复现。随机测试不能证明所有输入等价，也不能外推当前所有混淆器。日期未确定。 |
+| C78 | 未知 | [GitHub · UnpackThemida：转储、可运行重建与授权前置条件的区别](https://github.com/TopSoftdeveloper/UnpackThemida) | `research_tool` | 维护者说明工具用于运行目标后转储及修复导入，且多数转储不能直接运行；部分WinLicense目标启动仍需要有效许可证。 工具能力说明而非完整破解证明；不支持.NET DLL等限制见README。未运行目标或工具；不能把“能转储”写成“无需授权即可运行”。首次日期未知。 |
+| C79 | 未知 | [GitHub · Promon SHIELD Reversal：应用加固层与证据边界](https://github.com/KiFilterFiberContext/promon-reversal) | `architecture_review` | 作者分析Java/native依赖和APK签名块读取等局部机制，明确仅讨论部分保护，并引用较早研究。 仅核对维护者README，未检查所称PoC的实现/运行结果，不认定厂商全部防护或服务端鉴权被绕过。签名块读取、库完整性和实际执行内容需分别审查；首次发表时间未知。 |
+| C80 | 未知 | [Habr · CardioSmart模块授权分析：能启动不代表业务能力已通过](https://habr.com/ru/articles/996340/) | `author_report` | 作者报告先修改组件授权相关分支打开主界面，随后导入文件仍触发另一层授权，继续追踪组件许可等级后才声称业务可用。 核对第一部分授权分析的关键段，未逐行审计后续文件格式研究或验证临床功能。目标版本、首次日期和当前适用性未确定；作者自述不是独立复现。 |
+| C81 | 未知 | [GitHub · VMPLift：处理器跟踪输出与完整语义恢复的区别](https://github.com/sexyiam/VMPLift) | `research_tool` | 维护者将工具描述为针对已脱壳VMProtect x64的handler walker/VIP tracer，并在探测成功的简单纯函数上尝试生成闭式表达。 版本范围为维护者宣称，未实测。生成报告、IR或轨迹不等于完整可重编译业务，adder示例不能推导任意授权系统已被破解；首次日期未知。 |

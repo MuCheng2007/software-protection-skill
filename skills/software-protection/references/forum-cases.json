@@ -1562,6 +1562,203 @@
       "mapping_role": "author_claim_lead",
       "full_review_record": "docs/research/update-review-2026-10-21.json",
       "full_review_id": "C72"
+    },
+    {
+      "id": "C73",
+      "site": "CSDN",
+      "title": "Source Insight 4.0.118注册机制研究",
+      "url": "https://blog.csdn.net/weixin_38526180/article/details/107974699",
+      "published_at": null,
+      "retrieved_at": "2026-10-21",
+      "case_type": "historical_author_report",
+      "access": "public_body",
+      "evidence_summary": "作者将本地序列号、许可证验签与后续在线检查分开分析，报告替换客户端信任公钥并修改本地在线检查线程。",
+      "limitations": "只支持文中4.0.118及作者所述路径；未独立运行。页面显示推荐日期而非可靠首发日期；不是破解RSA、泄漏原签发私钥或攻破服务器。",
+      "patterns": [
+        "F01",
+        "F08"
+      ],
+      "independently_reproduced": false,
+      "review_status": "source_body_reviewed",
+      "source_review_note": "只支持文中4.0.118及作者所述路径；未独立运行。页面显示推荐日期而非可靠首发日期；不是破解RSA、泄漏原签发私钥或攻破服务器。",
+      "reviewed_at": "2026-10-21",
+      "mapping_role": "author_claim_lead",
+      "full_review_record": "docs/research/remaining-1177-review-2026-10-21.json",
+      "full_review_id": "C73"
+    },
+    {
+      "id": "C74",
+      "site": "个人研究博客",
+      "title": "Denuvo Analysis：半在线授权与计算依赖常数",
+      "url": "https://connorjaydunn.github.io/blog/posts/denuvo-analysis/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21",
+      "case_type": "architecture_review",
+      "access": "public_body",
+      "evidence_summary": "原作者说明半在线许可将部分计算材料与设备信息结合后缓存，运行时恢复用于真实指令；服务端内部处理被作者明确标为推测。",
+      "limitations": "这是研究笔记而非厂商规范或完整破解记录；未证明所有版本。缓存材料最终在客户端使用，不等同于持续受云端控制的计算，也不保证完整客户端失陷后的不可复用性。首发日期未确定。",
+      "patterns": [],
+      "independently_reproduced": false,
+      "review_status": "source_body_reviewed",
+      "source_review_note": "这是研究笔记而非厂商规范或完整破解记录；未证明所有版本。缓存材料最终在客户端使用，不等同于持续受云端控制的计算，也不保证完整客户端失陷后的不可复用性。首发日期未确定。",
+      "reviewed_at": "2026-10-21",
+      "mapping_role": "none",
+      "full_review_record": "docs/research/remaining-1177-review-2026-10-21.json",
+      "full_review_id": "C74",
+      "repost_url": "https://habr.com/ru/articles/1019076/"
+    },
+    {
+      "id": "C75",
+      "site": "GitHub",
+      "title": "RACEAC：校验文件与重新打开使用之间的竞态",
+      "url": "https://github.com/ioncodes/RACEAC",
+      "published_at": null,
+      "retrieved_at": "2026-10-21",
+      "case_type": "historical_adjacent_tamper_report",
+      "access": "public_body",
+      "evidence_summary": "作者报告资源完整性检查后业务重新打开文件，形成校验对象与使用内容之间的时间差。",
+      "limitations": "反作弊相邻案例，仅抽象文件信任边界。README已注明其PoC不适用于文中所称当前版本；首次发布日期未确认，未运行PoC或验证当前产品。",
+      "patterns": [
+        "F05"
+      ],
+      "independently_reproduced": false,
+      "review_status": "source_body_reviewed",
+      "source_review_note": "反作弊相邻案例，仅抽象文件信任边界。README已注明其PoC不适用于文中所称当前版本；首次发布日期未确认，未运行PoC或验证当前产品。",
+      "reviewed_at": "2026-10-21",
+      "mapping_role": "author_claim_lead",
+      "full_review_record": "docs/research/remaining-1177-review-2026-10-21.json",
+      "full_review_id": "C75"
+    },
+    {
+      "id": "C76",
+      "site": "GitHub",
+      "title": "MogVMP：限定版本与函数复杂度的静态反虚拟化PoC",
+      "url": "https://github.com/eversinc33/MogVMP",
+      "published_at": null,
+      "retrieved_at": "2026-10-21",
+      "case_type": "research_tool",
+      "access": "public_body",
+      "evidence_summary": "维护者将工具限定为已脱壳的32位VMProtect 3.0至3.5目标，输出可读LLVM IR，并明确教学/CTF和PoC性质。",
+      "limitations": "跳转表、外部调用、多VM和参数缓冲区存在限制或需人工处理；不以README宣称证明任意产品可还原，未安装运行，仓库创建时间不是研究发表日期。",
+      "patterns": [
+        "F12"
+      ],
+      "independently_reproduced": false,
+      "review_status": "source_body_reviewed",
+      "source_review_note": "跳转表、外部调用、多VM和参数缓冲区存在限制或需人工处理；不以README宣称证明任意产品可还原，未安装运行，仓库创建时间不是研究发表日期。",
+      "reviewed_at": "2026-10-21",
+      "mapping_role": "illustrative",
+      "full_review_record": "docs/research/remaining-1177-review-2026-10-21.json",
+      "full_review_id": "C76"
+    },
+    {
+      "id": "C77",
+      "site": "GitHub",
+      "title": "Tigress_protection：函数语义恢复与输出一致性实验",
+      "url": "https://github.com/JonathanSalwan/Tigress_protection",
+      "published_at": null,
+      "retrieved_at": "2026-10-21",
+      "case_type": "research_demo",
+      "access": "public_body",
+      "evidence_summary": "研究者给出Tigress挑战及受控哈希函数的语义简化实验，使用随机输入比较原程序与重建输出。",
+      "limitations": "受控研究基准，不是920款商业软件；样本成功数和性能为作者报告，本项目未复现。随机测试不能证明所有输入等价，也不能外推当前所有混淆器。日期未确定。",
+      "patterns": [
+        "F12"
+      ],
+      "independently_reproduced": false,
+      "review_status": "source_body_reviewed",
+      "source_review_note": "受控研究基准，不是920款商业软件；样本成功数和性能为作者报告，本项目未复现。随机测试不能证明所有输入等价，也不能外推当前所有混淆器。日期未确定。",
+      "reviewed_at": "2026-10-21",
+      "mapping_role": "illustrative",
+      "full_review_record": "docs/research/remaining-1177-review-2026-10-21.json",
+      "full_review_id": "C77"
+    },
+    {
+      "id": "C78",
+      "site": "GitHub",
+      "title": "UnpackThemida：转储、可运行重建与授权前置条件的区别",
+      "url": "https://github.com/TopSoftdeveloper/UnpackThemida",
+      "published_at": null,
+      "retrieved_at": "2026-10-21",
+      "case_type": "research_tool",
+      "access": "public_body",
+      "evidence_summary": "维护者说明工具用于运行目标后转储及修复导入，且多数转储不能直接运行；部分WinLicense目标启动仍需要有效许可证。",
+      "limitations": "工具能力说明而非完整破解证明；不支持.NET DLL等限制见README。未运行目标或工具；不能把“能转储”写成“无需授权即可运行”。首次日期未知。",
+      "patterns": [
+        "F12"
+      ],
+      "independently_reproduced": false,
+      "review_status": "source_body_reviewed",
+      "source_review_note": "工具能力说明而非完整破解证明；不支持.NET DLL等限制见README。未运行目标或工具；不能把“能转储”写成“无需授权即可运行”。首次日期未知。",
+      "reviewed_at": "2026-10-21",
+      "mapping_role": "illustrative",
+      "full_review_record": "docs/research/remaining-1177-review-2026-10-21.json",
+      "full_review_id": "C78"
+    },
+    {
+      "id": "C79",
+      "site": "GitHub",
+      "title": "Promon SHIELD Reversal：应用加固层与证据边界",
+      "url": "https://github.com/KiFilterFiberContext/promon-reversal",
+      "published_at": null,
+      "retrieved_at": "2026-10-21",
+      "case_type": "architecture_review",
+      "access": "public_body",
+      "evidence_summary": "作者分析Java/native依赖和APK签名块读取等局部机制，明确仅讨论部分保护，并引用较早研究。",
+      "limitations": "仅核对维护者README，未检查所称PoC的实现/运行结果，不认定厂商全部防护或服务端鉴权被绕过。签名块读取、库完整性和实际执行内容需分别审查；首次发表时间未知。",
+      "patterns": [],
+      "independently_reproduced": false,
+      "review_status": "source_body_reviewed",
+      "source_review_note": "仅核对维护者README，未检查所称PoC的实现/运行结果，不认定厂商全部防护或服务端鉴权被绕过。签名块读取、库完整性和实际执行内容需分别审查；首次发表时间未知。",
+      "reviewed_at": "2026-10-21",
+      "mapping_role": "none",
+      "full_review_record": "docs/research/remaining-1177-review-2026-10-21.json",
+      "full_review_id": "C79"
+    },
+    {
+      "id": "C80",
+      "site": "Habr",
+      "title": "CardioSmart模块授权分析：能启动不代表业务能力已通过",
+      "url": "https://habr.com/ru/articles/996340/",
+      "published_at": null,
+      "retrieved_at": "2026-10-21",
+      "case_type": "author_report",
+      "access": "public_body",
+      "evidence_summary": "作者报告先修改组件授权相关分支打开主界面，随后导入文件仍触发另一层授权，继续追踪组件许可等级后才声称业务可用。",
+      "limitations": "核对第一部分授权分析的关键段，未逐行审计后续文件格式研究或验证临床功能。目标版本、首次日期和当前适用性未确定；作者自述不是独立复现。",
+      "patterns": [
+        "F01",
+        "F06"
+      ],
+      "independently_reproduced": false,
+      "review_status": "source_body_reviewed",
+      "source_review_note": "核对第一部分授权分析的关键段，未逐行审计后续文件格式研究或验证临床功能。目标版本、首次日期和当前适用性未确定；作者自述不是独立复现。",
+      "reviewed_at": "2026-10-21",
+      "mapping_role": "author_claim_lead",
+      "full_review_record": "docs/research/remaining-1177-review-2026-10-21.json",
+      "full_review_id": "C80"
+    },
+    {
+      "id": "C81",
+      "site": "GitHub",
+      "title": "VMPLift：处理器跟踪输出与完整语义恢复的区别",
+      "url": "https://github.com/sexyiam/VMPLift",
+      "published_at": null,
+      "retrieved_at": "2026-10-21",
+      "case_type": "research_tool",
+      "access": "public_body",
+      "evidence_summary": "维护者将工具描述为针对已脱壳VMProtect x64的handler walker/VIP tracer，并在探测成功的简单纯函数上尝试生成闭式表达。",
+      "limitations": "版本范围为维护者宣称，未实测。生成报告、IR或轨迹不等于完整可重编译业务，adder示例不能推导任意授权系统已被破解；首次日期未知。",
+      "patterns": [
+        "F12"
+      ],
+      "independently_reproduced": false,
+      "review_status": "source_body_reviewed",
+      "source_review_note": "版本范围为维护者宣称，未实测。生成报告、IR或轨迹不等于完整可重编译业务，adder示例不能推导任意授权系统已被破解；首次日期未知。",
+      "reviewed_at": "2026-10-21",
+      "mapping_role": "illustrative",
+      "full_review_record": "docs/research/remaining-1177-review-2026-10-21.json",
+      "full_review_id": "C81"
     }
   ],
   "initial_researched_at": "2026-10-14",
@@ -1610,6 +1807,19 @@
       "records": 14,
       "report": "docs/research/update-review-2026-10-21.json",
       "scope": "14 new records checked against supplied text passages; 2 canonical duplicates retained; remaining automated candidates are metadata triage only, not merged as verified cases."
+    },
+    {
+      "date": "2026-10-21",
+      "records": 9,
+      "report": "docs/research/remaining-1177-review-2026-10-21.json",
+      "scope": "All 1177 titles and supplied excerpt passages screened individually; selected original source passages checked. Not 1177 full-page audits or runtime reproductions."
     }
-  ]
+  ],
+  "remaining_candidate_screen": {
+    "report": "docs/research/remaining-1177-review-2026-10-21.json",
+    "records": 1177,
+    "retained": 9,
+    "excluded": 1168,
+    "pending": 0
+  }
 }

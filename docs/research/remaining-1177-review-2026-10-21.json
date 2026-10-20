@@ -1,0 +1,390 @@
+{
+  "reviewed_at": "2026-10-21",
+  "scope": "All 1177 titles and supplied excerpt passages screened individually; selected original source passages checked. Not 1177 full-page audits or runtime reproductions.",
+  "counts": {
+    "source_body_reviewed": 9
+  },
+  "runtime_reproductions": 0,
+  "records": [
+    {
+      "id": "C73",
+      "input_id": "csdn:107974699",
+      "screen_row": 288,
+      "url": "https://blog.csdn.net/weixin_38526180/article/details/107974699",
+      "review_status": "source_body_reviewed",
+      "date_status": "first_publication_unresolved",
+      "mapping_role": "author_claim_lead",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "作者将本地序列号、许可证验签与后续在线检查分开分析，报告替换客户端信任公钥并修改本地在线检查线程。 只支持文中4.0.118及作者所述路径；未独立运行。页面显示推荐日期而非可靠首发日期；不是破解RSA、泄漏原签发私钥或攻破服务器。",
+      "evidence": [
+        {
+          "kind": "public_page_read",
+          "url": "https://blog.csdn.net/weixin_38526180/article/details/107974699",
+          "sections": [
+            "前言与版本4.0.118",
+            "2.1/2.3许可证验签与自签名",
+            "3在线检查序列号"
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C74",
+      "input_id": "habr:1019076",
+      "screen_row": 692,
+      "url": "https://connorjaydunn.github.io/blog/posts/denuvo-analysis/",
+      "review_status": "source_body_reviewed",
+      "date_status": "first_publication_unresolved",
+      "mapping_role": "none",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "原作者说明半在线许可将部分计算材料与设备信息结合后缓存，运行时恢复用于真实指令；服务端内部处理被作者明确标为推测。 这是研究笔记而非厂商规范或完整破解记录；未证明所有版本。缓存材料最终在客户端使用，不等同于持续受云端控制的计算，也不保证完整客户端失陷后的不可复用性。首发日期未确定。",
+      "evidence": [
+        {
+          "kind": "public_page_read",
+          "url": "https://connorjaydunn.github.io/blog/posts/denuvo-analysis/",
+          "sections": [
+            "Foreword",
+            "The General Idea",
+            "License File",
+            "Encrypted Constant / Removed Instruction Example",
+            "Pre-OEP Checks"
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C75",
+      "input_id": "gh:ioncodes/RACEAC",
+      "screen_row": 925,
+      "url": "https://github.com/ioncodes/RACEAC",
+      "review_status": "source_body_reviewed",
+      "date_status": "first_publication_unresolved",
+      "mapping_role": "author_claim_lead",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "作者报告资源完整性检查后业务重新打开文件，形成校验对象与使用内容之间的时间差。 反作弊相邻案例，仅抽象文件信任边界。README已注明其PoC不适用于文中所称当前版本；首次发布日期未确认，未运行PoC或验证当前产品。",
+      "evidence": [
+        {
+          "kind": "public_page_read",
+          "url": "https://github.com/ioncodes/RACEAC",
+          "sections": [
+            "The bug",
+            "The PoC",
+            "Last words"
+          ],
+          "content_sha256": "deb69377becc49f47a19e70dc91adfaa529fd27642fc8ba3c54dcefa57310272",
+          "content_bytes": 4057,
+          "material": "maintainer README only"
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C76",
+      "input_id": "gh:eversinc33/MogVMP",
+      "screen_row": 885,
+      "url": "https://github.com/eversinc33/MogVMP",
+      "review_status": "source_body_reviewed",
+      "date_status": "first_publication_unresolved",
+      "mapping_role": "illustrative",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "维护者将工具限定为已脱壳的32位VMProtect 3.0至3.5目标，输出可读LLVM IR，并明确教学/CTF和PoC性质。 跳转表、外部调用、多VM和参数缓冲区存在限制或需人工处理；不以README宣称证明任意产品可还原，未安装运行，仓库创建时间不是研究发表日期。",
+      "evidence": [
+        {
+          "kind": "public_page_read",
+          "url": "https://github.com/eversinc33/MogVMP",
+          "sections": [
+            "Introduction and PoC disclaimer",
+            "CFG recovery limitations",
+            "Unpacked binaries and readable IR",
+            "Examples"
+          ],
+          "content_sha256": "cae22b376c8e3405479c4febfc9b8fa843034f002e591239809836c3e6bddc81",
+          "content_bytes": 4214,
+          "material": "maintainer README only"
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C77",
+      "input_id": "gh:JonathanSalwan/Tigress_protection",
+      "screen_row": 939,
+      "url": "https://github.com/JonathanSalwan/Tigress_protection",
+      "review_status": "source_body_reviewed",
+      "date_status": "first_publication_unresolved",
+      "mapping_role": "illustrative",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "研究者给出Tigress挑战及受控哈希函数的语义简化实验，使用随机输入比较原程序与重建输出。 受控研究基准，不是920款商业软件；样本成功数和性能为作者报告，本项目未复现。随机测试不能证明所有输入等价，也不能外推当前所有混淆器。日期未确定。",
+      "evidence": [
+        {
+          "kind": "public_page_read",
+          "url": "https://github.com/JonathanSalwan/Tigress_protection",
+          "sections": [
+            "Challenge Format",
+            "Automatic deobfuscation",
+            "Testing our simplified binaries",
+            "Testing our approach on others binaries"
+          ],
+          "content_sha256": "0c5d5f2634589c8261cae81d162e4bfd25b68da0e7a2868788de6c74131831aa",
+          "content_bytes": 9409,
+          "material": "maintainer README only"
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C78",
+      "input_id": "gh:TopSoftdeveloper/UnpackThemida",
+      "screen_row": 1058,
+      "url": "https://github.com/TopSoftdeveloper/UnpackThemida",
+      "review_status": "source_body_reviewed",
+      "date_status": "first_publication_unresolved",
+      "mapping_role": "illustrative",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "维护者说明工具用于运行目标后转储及修复导入，且多数转储不能直接运行；部分WinLicense目标启动仍需要有效许可证。 工具能力说明而非完整破解证明；不支持.NET DLL等限制见README。未运行目标或工具；不能把“能转储”写成“无需授权即可运行”。首次日期未知。",
+      "evidence": [
+        {
+          "kind": "public_page_read",
+          "url": "https://github.com/TopSoftdeveloper/UnpackThemida",
+          "sections": [
+            "Warning",
+            "Features",
+            "Known Limitations"
+          ],
+          "content_sha256": "66c6c6de288263feaf867fb8df606ef729312199dea79e33386cf43dc704cf43",
+          "content_bytes": 2139,
+          "material": "maintainer README only"
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C79",
+      "input_id": "gh:KiFilterFiberContext/promon-reversal",
+      "screen_row": 949,
+      "url": "https://github.com/KiFilterFiberContext/promon-reversal",
+      "review_status": "source_body_reviewed",
+      "date_status": "first_publication_unresolved",
+      "mapping_role": "none",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "作者分析Java/native依赖和APK签名块读取等局部机制，明确仅讨论部分保护，并引用较早研究。 仅核对维护者README，未检查所称PoC的实现/运行结果，不认定厂商全部防护或服务端鉴权被绕过。签名块读取、库完整性和实际执行内容需分别审查；首次发表时间未知。",
+      "evidence": [
+        {
+          "kind": "public_page_read",
+          "url": "https://github.com/KiFilterFiberContext/promon-reversal",
+          "sections": [
+            "Disclaimer",
+            "Java Obfuscation",
+            "Static Code Obfuscation",
+            "APK Tampering",
+            "Credits"
+          ],
+          "content_sha256": "556b361e64be60b8b2960e0e84ea139c408f4b712c327577c48136c611c6d93a",
+          "content_bytes": 12391,
+          "material": "maintainer README only"
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C80",
+      "input_id": "habr:996340",
+      "screen_row": 788,
+      "url": "https://habr.com/ru/articles/996340/",
+      "review_status": "source_body_reviewed",
+      "date_status": "first_publication_unresolved",
+      "mapping_role": "author_claim_lead",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "作者报告先修改组件授权相关分支打开主界面，随后导入文件仍触发另一层授权，继续追踪组件许可等级后才声称业务可用。 核对第一部分授权分析的关键段，未逐行审计后续文件格式研究或验证临床功能。目标版本、首次日期和当前适用性未确定；作者自述不是独立复现。",
+      "evidence": [
+        {
+          "kind": "public_page_read",
+          "url": "https://habr.com/ru/articles/996340/",
+          "sections": [
+            "Part 1: protection bypass",
+            "License status and component level",
+            "Import after first patch",
+            "Part 1 conclusion before Part 2"
+          ]
+        }
+      ],
+      "independently_reproduced": false
+    },
+    {
+      "id": "C81",
+      "input_id": "gh:sexyiam/VMPLift",
+      "screen_row": 1027,
+      "url": "https://github.com/sexyiam/VMPLift",
+      "review_status": "source_body_reviewed",
+      "date_status": "first_publication_unresolved",
+      "mapping_role": "illustrative",
+      "result": "supported_with_source_limits",
+      "checked": [
+        "source_identity",
+        "publication_date_basis",
+        "case_type",
+        "mechanism_scope",
+        "pattern_mapping"
+      ],
+      "finding": "维护者将工具描述为针对已脱壳VMProtect x64的handler walker/VIP tracer，并在探测成功的简单纯函数上尝试生成闭式表达。 版本范围为维护者宣称，未实测。生成报告、IR或轨迹不等于完整可重编译业务，adder示例不能推导任意授权系统已被破解；首次日期未知。",
+      "evidence": [
+        {
+          "kind": "public_page_read",
+          "url": "https://github.com/sexyiam/VMPLift",
+          "sections": [
+            "Handler walker / VIP tracer",
+            "Emu-first scope and pure-function condition",
+            "Output"
+          ],
+          "content_sha256": "4b691f278da89a2d89d278ab921f445365f5884b56358767b4ebeb8077570816",
+          "content_bytes": 1949,
+          "material": "maintainer README only"
+        }
+      ],
+      "independently_reproduced": false
+    }
+  ],
+  "screen": {
+    "records": 1177,
+    "file": "docs/research/remaining-1177-dispositions.csv",
+    "sha256": "74d7dae5d53ae1d6137b74f9e6a91225f1877cd2ade9f592e119d753a3a9eb39",
+    "reason_counts": {
+      "R03": 100,
+      "R02": 258,
+      "R04": 82,
+      "R08": 210,
+      "R05": 130,
+      "R01": 349,
+      "R06": 24,
+      "R07": 15,
+      "K01": 9
+    },
+    "decision_counts": {
+      "exclude": 1168,
+      "retain": 9
+    },
+    "input_ids_sha256": "398968bd9eada2b17b30714a8624a2cb15752bff524c9eeea9550c043502fdc7",
+    "input_export_sha256": "df6614260e7c5d69461ce0e9d3ab223753e4d29de1b20c9971b6aac7fbdfeebd",
+    "reason_definitions": {
+      "R01": "非软件商业授权/核心算法保护场景，正文线索偏向账号、爬虫、硬件维修、恶意样本或一般开发。",
+      "R02": "CTF/CrackMe或基础逆向练习，无本批新增的产品授权失效证据；已有教学维度不重复扩充。",
+      "R03": "工具/库/目录/示例声明本身不足以证明目标软件被破解，未发现值得新增的已核实机制。",
+      "R04": "宣传选型、成品分发、安装激活指引或下载导向，缺少可引用的原始分析链。",
+      "R05": "现有标题/片段不足以核对目标版本、前置条件、机制与结果，或选读原始正文不可得。",
+      "R06": "证据抽取与标题明显错配、混入推荐/无关内容或存在无法可靠定位的文本污染。",
+      "R07": "与另一条提供的证据片段相同，或同一原文的语言/转载入口；不重复计入，未据片段认定整篇抄袭。",
+      "R08": "一般设计、教程或经验建议，未增加现有Skill之外的可靠案例证据或新的审查能力。",
+      "K01": "拟纳入摘要已追加核对原始正文/维护者README；只按明确范围引用，未独立运行复现。"
+    }
+  },
+  "online_access_gaps": [
+    {
+      "input_row": 59,
+      "url": "https://blog.csdn.net/xu_jl1997/article/details/106137387",
+      "result": "Original page unavailable via web reader"
+    },
+    {
+      "input_row": 134,
+      "url": "https://blog.csdn.net/xiaoyao961/article/details/162213115",
+      "result": "Original page unavailable via web reader"
+    },
+    {
+      "input_row": 182,
+      "url": "https://blog.csdn.net/weixin_30402231/article/details/166675396",
+      "result": "Original page unavailable via web reader"
+    },
+    {
+      "input_row": 216,
+      "url": "https://blog.csdn.net/p876643136/article/details/79448727",
+      "result": "Original page unavailable via web reader"
+    },
+    {
+      "input_row": 223,
+      "url": "https://blog.csdn.net/moonights/article/details/83637054",
+      "result": "Original page unavailable via web reader"
+    },
+    {
+      "input_row": 558,
+      "url": "https://blog.csdn.net/wangmj518/article/details/2562372",
+      "result": "Original page unavailable via web reader"
+    },
+    {
+      "input_row": 591,
+      "url": "https://blog.csdn.net/chivalrys/article/details/78167951",
+      "result": "Original page unavailable via web reader"
+    },
+    {
+      "input_row": 913,
+      "url": "https://github.com/heijiji0527/dockter-patch",
+      "result": "GitHub README request returned 404; repo availability itself not inferred"
+    },
+    {
+      "input_row": 990,
+      "url": "https://github.com/nickcano/RelocBonus",
+      "result": "GitHub README request returned 404; repo availability itself not inferred"
+    },
+    {
+      "input_row": 710,
+      "url": "https://cracklab.team/index.php?threads/1601/=",
+      "result": "Translation original link resolved to forum index, not target article; no new failure case merged."
+    }
+  ]
+}

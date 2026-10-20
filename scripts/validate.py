@@ -8,6 +8,8 @@ import re
 import sys
 import xml.etree.ElementTree as ET
 from collections import Counter
+import csv
+import hashlib
 
 
 def validate(root: Path) -> dict:
@@ -67,7 +69,7 @@ def validate(root: Path) -> dict:
     pattern_text = (skill / 'references/failure-patterns.md').read_text(encoding='utf-8')
     patterns = set(re.findall(r'^## (F\d{2}) ', pattern_text, re.M))
     check(set(re.findall(r'\bC\d{2}\b', pattern_text)) <= set(ids), 'Unknown case referenced in patterns')
-    allowed_hosts = {'bbs.kanxue.com', 'habr.com', 'nac-l.github.io', 'github.com', 'blog.csdn.net', 'overkazaf.github.io', 'dmitrybrant.com', 'www.52hb.com', 'www.52pojie.cn', 'www.chinapyg.com', 'www.ofweek.com', 'vxcall.github.io', 'www.cnblogs.com', 'juejin.cn'}
+    allowed_hosts = {'bbs.kanxue.com', 'habr.com', 'nac-l.github.io', 'github.com', 'blog.csdn.net', 'overkazaf.github.io', 'dmitrybrant.com', 'www.52hb.com', 'www.52pojie.cn', 'www.chinapyg.com', 'www.ofweek.com', 'vxcall.github.io', 'www.cnblogs.com', 'juejin.cn', 'connorjaydunn.github.io'}
     for c in cases:
         cid = c['id']
         check('verified' not in c, f'{cid}: ambiguous automatic verified flag')
@@ -186,6 +188,50 @@ def validate(root: Path) -> dict:
                     else:
                         check(bool(evidence['sections']), 'Public-page locator missing')
             check(reproduced == review['runtime_reproductions'], 'Runtime reproduction count mismatch')
+            screen = review.get('screen')
+            if screen:
+                screen_path = (root / screen['file']).resolve()
+                check(screen_path.is_relative_to(root), 'Screen path escapes repository')
+                if screen_path.is_relative_to(root) and screen_path.is_file():
+                    check(hashlib.sha256(screen_path.read_bytes()).hexdigest() == screen['sha256'],
+                          'Screen file digest differs')
+                    with screen_path.open(encoding='utf-8', newline='') as handle:
+                        entries = list(csv.DictReader(handle))
+                    check(len(entries) == screen['records'], 'Screen row count mismatch')
+                    check({e['row'] for e in entries} == {str(i) for i in range(screen['records'])},
+                          'Screen row coverage incomplete')
+                    input_ids = [e['input_id'] for e in entries]
+                    check(len(input_ids) == len(set(input_ids)), 'Duplicate screen input ID')
+                    check(hashlib.sha256('\n'.join(sorted(input_ids)).encode()).hexdigest() == screen['input_ids_sha256'],
+                          'Screen input set differs')
+                    check(dict(Counter(e['reason'] for e in entries)) == screen['reason_counts'],
+                          'Screen reason totals differ')
+                    check(dict(Counter(e['decision'] for e in entries)) == screen['decision_counts'],
+                          'Screen decision totals differ')
+                    by_input = {e['input_id']: e for e in entries}
+                    retained = {e['target'] for e in entries if e['decision'] == 'retain'}
+                    check(retained == set(review_ids), 'Retained source/review coverage differs')
+                    check(sum(e['decision'] == 'retain' for e in entries) == len(reviewed),
+                          'Retained row count differs from reviewed sources')
+                    for e in entries:
+                        check(e['reason'] in screen['reason_definitions'], 'Unknown screening reason')
+                        check(re.fullmatch(r'[0-9a-f]{64}', e['record_sha256']) is not None,
+                              'Invalid input record digest')
+                        check(e['decision'] in {'retain', 'exclude'}, 'Unresolved screening row')
+                        check((e['decision'] == 'retain') == (e['reason'] == 'K01'),
+                              'Screen decision and reason disagree')
+                        check(e['scope'] == ('source_passages_reviewed' if e['decision'] == 'retain' else 'title_excerpt_screen'),
+                              'Screen scope overstatement')
+                        if e['target']:
+                            check(e['target'] in set(ids) or
+                                  (e['target'].startswith('input:') and e['target'][6:] in by_input),
+                                  'Screen reference target missing')
+                    for record in reviewed:
+                        e = by_input.get(record.get('input_id'), {})
+                        check(e.get('target') == record['id'] and e.get('row') == str(record.get('screen_row')),
+                              'Retained case input identity differs')
+                else:
+                    errors.append('Screen CSV missing')
     if reviews:
         check(len(covered_ids) == len(set(covered_ids)), 'Case reviewed in multiple active batches')
         check(set(covered_ids) == set(ids), 'Review batches do not cover case IDs exactly')
