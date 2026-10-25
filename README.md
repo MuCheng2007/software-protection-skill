@@ -54,7 +54,7 @@ Software licensing & protection Agent Skill — license key validation, offline 
 
 ## 🚀 开始使用
 
-**最新版本：[v0.3.3](https://github.com/MuCheng2007/software-protection-skill/releases/tag/v0.3.3)** · [下载技能安装包](https://github.com/MuCheng2007/software-protection-skill/releases/download/v0.3.3/software-protection-v0.3.3.zip)。新增 [AI 逆向与虚拟化保护审查](skills/software-protection/references/ai-reverse-engineering.md)：核验两篇研究的有效思路，剔除通用防 AI 保证，补充成功路径、动态分析与干净环境复验。[查看取舍依据](docs/research/ai-re-review-2026-10-24.md)。这是研究方法补充，案例计数不变。
+**最新版本：[v0.3.4](https://github.com/MuCheng2007/software-protection-skill/releases/tag/v0.3.4)** · [下载技能安装包](https://github.com/MuCheng2007/software-protection-skill/releases/download/v0.3.4/software-protection-v0.3.4.zip)。新增从分析工作流反推防御的方法：建立执行层次图、运行数据暴露表，验收一次合法运行后的材料复用、撤销后新任务与直接后端调用。[查看审查方法](skills/software-protection/references/ai-reverse-engineering.md) · [来源、署名与取舍](docs/research/r0crawl-review-2026-10-25.md)。这是研究方法补充，案例计数不变。
 
 1. 下载本仓库：点击 **Code → Download ZIP**，或运行：
 

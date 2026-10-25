@@ -32,7 +32,7 @@ description: 审查自有程序抵抗 AI 逆向、授权绕过和核心算法泄
 
 ## 执行流程
 
-涉及“防 AI / 防 REA”、组合混淆或虚拟化保护时，按需阅读 [references/ai-reverse-engineering.md](references/ai-reverse-engineering.md)。区分语义恢复路线与版本适配，要求样例有合法成功路径、交付物能在干净环境复现；不把旧模型、小样本或一次失败当作防护保证。
+涉及“防 AI / 防 REA”、组合混淆或虚拟化保护时，按需阅读 [references/ai-reverse-engineering.md](references/ai-reverse-engineering.md)。区分语义恢复路线与版本适配；对打包和解释器程序建立执行层次图与运行数据暴露表。要求样例有合法成功路径、交付物能在干净环境复现；不把模块数量、旧模型、小样本或一次失败当作能力或防护保证。
 
 1. 建立重点保护清单：按 [references/protection-review.md](references/protection-review.md) 检查资产和信任边界，将优先级落实到用户项目。涉及逆向抵抗、授权绕过或已有壳/验证系统时，再按 [references/failure-patterns.md](references/failure-patterns.md) 将失效模式映射到真实资产；每个适用模式给出证据、控制、验收和剩余风险。
 2. 选择授权架构：阅读 [references/licensing-design.md](references/licensing-design.md)，比较离线、联网与混合方案。给出一个推荐方案和选择理由，保留用户的明确要求。

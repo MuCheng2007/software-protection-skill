@@ -129,7 +129,7 @@ Records preserve original publication dates, the extent of material read, source
 
 ## 🔄 Ongoing maintenance
 
-**Latest release: [v0.3.3](https://github.com/MuCheng2007/software-protection-skill/releases/tag/v0.3.3)** · [Download the skill package](https://github.com/MuCheng2007/software-protection-skill/releases/download/v0.3.3/software-protection-v0.3.3.zip). This update adds an [AI reverse engineering and virtualization review](skills/software-protection/references/ai-reverse-engineering.md) covering semantic recovery, version-specific limits, valid success paths, and clean-environment verification. Unsupported universal protection claims were excluded. The [source review](docs/research/ai-re-review-2026-10-24.md) is in Chinese; these two research sources do not increase the case count.
+**Latest release: [v0.3.4](https://github.com/MuCheng2007/software-protection-skill/releases/tag/v0.3.4)** · [Download the skill package](https://github.com/MuCheng2007/software-protection-skill/releases/download/v0.3.4/software-protection-v0.3.4.zip). This update adds execution-layer and runtime-data exposure reviews, plus acceptance scenarios for reuse after one licensed run, new tasks after revocation, and direct backend calls. See the [review guidance](skills/software-protection/references/ai-reverse-engineering.md) and [pinned source attribution and scope](docs/research/r0crawl-review-2026-10-25.md) (Chinese). This workflow study does not increase the case count or claim protection against a particular tool.
 
 **This project will continue collecting public cases of licensing failures, tampering, and software protection to help developers design licensing and protect their software.**
 

@@ -1,5 +1,7 @@
 Third-party sources and attribution
 
+The v0.3.4 workflow review credits the publishing account manyuegong33 and the r0crawl_skills repository at commit b9eb545926ede5f24adeb0d7e60d97ee73b409f7. See docs/research/r0crawl-review-2026-10-25.md for pinned source links, review scope, and our own defensive inferences. No third-party skill modules or scripts are redistributed by this update; no affiliation or endorsement is implied. This attribution does not assert permission to redistribute that repository.
+
 The MIT license covers original material in this repository. It does not relicense linked third-party forum posts, documentation, images, trademarks or software.
 
 Case records contain brief editorial summaries and links, not full-text mirrors or redistributed attachments. Product and vendor names identify the material discussed; no affiliation, endorsement or present vulnerability status is asserted.
