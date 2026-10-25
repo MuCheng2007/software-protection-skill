@@ -6,7 +6,7 @@
 
 # 🛡️ Software Protection & Licensing Skill
 
-**Ready to sell your app, but licensing still depends on one `if`? Ask your AI to find the weak points.**
+**Design licensing for your software with AI-assisted protection reviews, integration plans, and acceptance checks.**
 
 Learn from public cracking reports to review software protection, design license key validation, offline activation and device binding, and plan online or hybrid licensing with implementation and acceptance criteria.
 
@@ -38,9 +38,9 @@ For independent developers and small teams adding licensing to their own softwar
 
 **Expected deliverables: protection priorities, an architecture recommendation, an integration plan, acceptance criteria, and remaining risks.** With source and runtime access, the assistant can help implement the plan. With design materials alone, it starts with a proposal.
 
-**If AI can help modify the entire client, what still controls the paid capability?** The skill challenges cloud-delivered constants and keys that can be extracted and reused, evaluates keeping algorithms or essential computation on the server, and specifies APIs, authorization state, revocation, quotas, and direct API tests. It also explains the limits of fully offline protection. See the [architecture review reference](skills/software-protection/references/hostile-client-design.md) (Chinese).
+**If AI can help modify the entire client, what still controls the paid capability?** The skill checks whether cloud-delivered constants and keys can be extracted and reused, evaluates keeping algorithms or essential computation on the server, and specifies APIs, authorization state, revocation, quotas, and direct API tests. It also explains the limits of fully offline protection. See the [architecture review reference](skills/software-protection/references/hostile-client-design.md) (Chinese).
 
-An activation dialog, RSA signature, or executable packer alone does not explain what your software actually protects.
+The project helps developers review the path from activation to paid operations and understand what each protection measure can and cannot provide.
 
 This project turns public reports into a reusable Agent Skill connecting **failure conditions → defensive measures → acceptance tests → remaining risks**. Ask for a complete design, or let an assistant help implement and harden it when it has access to your project and tools.
 
@@ -132,6 +132,8 @@ Records preserve original publication dates, the extent of material read, source
 **Latest release: [v0.3.4](https://github.com/MuCheng2007/software-protection-skill/releases/tag/v0.3.4)** · [Download the skill package](https://github.com/MuCheng2007/software-protection-skill/releases/download/v0.3.4/software-protection-v0.3.4.zip). This update adds execution-layer and runtime-data exposure reviews, plus acceptance scenarios for reuse after one licensed run, new tasks after revocation, and direct backend calls. See the [review guidance](skills/software-protection/references/ai-reverse-engineering.md) and [pinned source attribution and scope](docs/research/r0crawl-review-2026-10-25.md) (Chinese). This workflow study does not increase the case count or claim protection against a particular tool.
 
 **This project will continue collecting public cases of licensing failures, tampering, and software protection to help developers design licensing and protect their software.**
+
+This project is still developing and needs more verifiable samples, especially before-and-after fixes, effective defenses, offline licensing, and recovery for legitimate users. Contributions, implementation examples, validation results, and corrections are welcome.
 
 The process is: submit a public source → check dates and evidence → identify the failure conditions → add defenses and acceptance tests → review and merge. Successful defenses, verified fixes, and counterexamples are welcome too.
 
